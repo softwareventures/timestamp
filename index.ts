@@ -174,3 +174,13 @@ export function beforeOrEqual(a: TimestampOptions, b: TimestampOptions): boolean
 export function beforeOrEqualFn(b: TimestampOptions): (a: TimestampOptions) => boolean {
     return a => beforeOrEqual(a, b);
 }
+
+/** Tests if the Timestamp a is after the Timestamp b. */
+export function after(a: TimestampOptions, b: TimestampOptions): boolean {
+    return toReferenceSeconds(a) > toReferenceSeconds(b);
+}
+
+/** Tests if the Timestamp a is after the Timestamp b. */
+export function afterFn(b: TimestampOptions): (a: TimestampOptions) => boolean {
+    return a => after(a, b);
+}
