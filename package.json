@@ -25,6 +25,7 @@
   },
   "dependencies": {
     "@softwareventures/date": "^1.4.2",
+    "@softwareventures/ordered": "^0.2.2",
     "@softwareventures/time": "^0.8.3",
     "tslib": "2.2.0"
   },

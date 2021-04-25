@@ -1,8 +1,9 @@
-import {toReferenceDays, fromReferenceDays} from "@softwareventures/date";
+import {fromReferenceDays, toReferenceDays} from "@softwareventures/date";
 import {
-    toReferenceSeconds as timeToReferenceSeconds,
-    fromReferenceSeconds as timeFromReferenceSeconds
+    fromReferenceSeconds as timeFromReferenceSeconds,
+    toReferenceSeconds as timeToReferenceSeconds
 } from "@softwareventures/time/time";
+import {Comparator, Comparison} from "@softwareventures/ordered";
 
 /** An instant in time, represented as a date and time in the Gregorian
  * Calendar, UTC. */
@@ -131,4 +132,25 @@ export function notEqual(a: TimestampOptions, b: TimestampOptions): boolean {
 /** Tests if two Timestamps are not equal. */
 export function notEqualFn(b: TimestampOptions): (a: TimestampOptions) => boolean {
     return a => notEqual(a, b);
+}
+
+/** Compares two Timestamps. */
+export const compare: Comparator<TimestampOptions> = (a, b) => {
+    const as = toReferenceSeconds(a);
+    const bs = toReferenceSeconds(b);
+
+    if (as < bs) {
+        return Comparison.before;
+    } else if (as > bs) {
+        return Comparison.after;
+    } else if (as === bs) {
+        return Comparison.equal;
+    } else {
+        return Comparison.undefined;
+    }
+};
+
+/** Compares two Timestamps. */
+export function compareFn(b: TimestampOptions): (a: TimestampOptions) => Comparison {
+    return a => compare(a, b);
 }
