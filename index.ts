@@ -4,6 +4,8 @@ import {
     toReferenceSeconds as timeToReferenceSeconds
 } from "@softwareventures/time/time";
 import {Comparator, Comparison} from "@softwareventures/ordered";
+import {map, minimum} from "@softwareventures/iterable";
+import {map as mapNullable} from "@softwareventures/nullable";
 
 /** An instant in time, represented as a date and time in the Gregorian
  * Calendar, UTC. */
@@ -193,4 +195,18 @@ export function afterOrEqual(a: TimestampOptions, b: TimestampOptions): boolean 
 /** Tests if the Timestamp a is after or equal to the Timestamp b. */
 export function afterOrEqualFn(b: TimestampOptions): (a: TimestampOptions) => boolean {
     return a => afterOrEqual(a, b);
+}
+
+/** Returns the earliest of the specified Timestamps. */
+export function earliest<T extends TimestampOptions>(timestamps: Iterable<T>): Timestamp | null {
+    return mapNullable(minimum(map(timestamps, toReferenceSeconds)), fromReferenceSeconds);
+}
+
+/** Returns the earliest of the specified Timestamps. */
+export function earliestFn(b: TimestampOptions): (a: TimestampOptions) => Timestamp {
+    const bs = toReferenceSeconds(b);
+    return a => {
+        const as = toReferenceSeconds(a);
+        return bs < as ? fromReferenceSeconds(bs) : fromReferenceSeconds(as);
+    };
 }
