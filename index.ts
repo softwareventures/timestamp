@@ -39,6 +39,9 @@ export interface Timestamp {
     readonly seconds: number;
 }
 
+/** Options for creating a Timestamp. */
+export type TimestampOptions = Partial<Timestamp>;
+
 export function isTimestamp(value: unknown): value is Timestamp {
     return (
         typeof value === "object" &&
