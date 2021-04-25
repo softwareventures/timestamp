@@ -232,6 +232,9 @@ export function now(): Timestamp {
     return timestamp({
         year: now.getUTCFullYear(),
         month: now.getUTCMonth() + 1,
-        day: now.getUTCDate()
+        day: now.getUTCDate(),
+        hours: now.getUTCHours(),
+        minutes: now.getUTCMinutes(),
+        seconds: now.getUTCSeconds() + now.getUTCMilliseconds() / 1000
     });
 }
