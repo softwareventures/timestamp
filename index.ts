@@ -154,3 +154,13 @@ export const compare: Comparator<TimestampOptions> = (a, b) => {
 export function compareFn(b: TimestampOptions): (a: TimestampOptions) => Comparison {
     return a => compare(a, b);
 }
+
+/** Tests if the Timestamp a is before the Timestamp b. */
+export function before(a: TimestampOptions, b: TimestampOptions): boolean {
+    return toReferenceSeconds(a) < toReferenceSeconds(b);
+}
+
+/** Tests if the Timestamp a is before the Timestamp b. */
+export function beforeFn(b: TimestampOptions): (a: TimestampOptions) => boolean {
+    return a => before(a, b);
+}
