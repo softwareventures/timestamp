@@ -164,3 +164,13 @@ export function before(a: TimestampOptions, b: TimestampOptions): boolean {
 export function beforeFn(b: TimestampOptions): (a: TimestampOptions) => boolean {
     return a => before(a, b);
 }
+
+/** Tests if the Timestamp a is before or equal to the Timestamp b. */
+export function beforeOrEqual(a: TimestampOptions, b: TimestampOptions): boolean {
+    return toReferenceSeconds(a) <= toReferenceSeconds(b);
+}
+
+/** Tests if the Timestamp a is before or equal to the Timestamp b. */
+export function beforeOrEqualFn(b: TimestampOptions): (a: TimestampOptions) => boolean {
+    return a => beforeOrEqual(a, b);
+}
