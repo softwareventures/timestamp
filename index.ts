@@ -122,3 +122,13 @@ export function equal(a: TimestampOptions, b: TimestampOptions): boolean {
 export function equalFn(b: TimestampOptions): (a: TimestampOptions) => boolean {
     return a => equal(a, b);
 }
+
+/** Tests if two Timestamps are not equal. */
+export function notEqual(a: TimestampOptions, b: TimestampOptions): boolean {
+    return toReferenceSeconds(a) !== toReferenceSeconds(b);
+}
+
+/** Tests if two Timestamps are not equal. */
+export function notEqualFn(b: TimestampOptions): (a: TimestampOptions) => boolean {
+    return a => notEqual(a, b);
+}
