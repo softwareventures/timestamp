@@ -22,26 +22,38 @@ export interface Timestamp {
      * on.
      *
      * Note that there is no year zero in the Gregorian Calendar. The year 1
-     * BCE was immediately followed by 1 CE. */
+     * BCE was immediately followed by 1 CE.
+     *
+     * @default 1 */
     readonly year: number;
 
-    /** The month of the year. Should be an integer in the range 1-12. */
+    /** The month of the year. Should be an integer in the range 1-12.
+     *
+     * @default 1 */
     readonly month: number;
 
-    /** The day of the month. Should be an integer in the range 1-31. */
+    /** The day of the month. Should be an integer in the range 1-31.
+     *
+     * @default 1 */
     readonly day: number;
 
     /** The hours component of the time of day. Should be an integer in the
-     * range 0-23. */
+     * range 0-23.
+     *
+     * @default 0 */
     readonly hours: number;
 
     /** The minutes component of the time of day. Should be an integer in the
-     * range 0-59. */
+     * range 0-59.
+     *
+     * @default 0 */
     readonly minutes: number;
 
     /** The seconds component of the time of day. Should be in the range 0-60,
      * inclusive of 0 but exclusive of 60. May be fractional to represent an
-     * instant in time with sub-second accuracy. */
+     * instant in time with sub-second accuracy.
+     *
+     * @default 0 */
     readonly seconds: number;
 }
 
