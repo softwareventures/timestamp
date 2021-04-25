@@ -112,3 +112,13 @@ export function fromReferenceSeconds(referenceSeconds: number): Timestamp {
     );
     return {type: "timestamp", year, month, day, hours, minutes, seconds};
 }
+
+/** Tests if two Timestamps are equal. */
+export function equal(a: TimestampOptions, b: TimestampOptions): boolean {
+    return toReferenceSeconds(a) === toReferenceSeconds(b);
+}
+
+/** Tests if two Timestamps are equal. */
+export function equalFn(b: TimestampOptions): (a: TimestampOptions) => boolean {
+    return a => equal(a, b);
+}
