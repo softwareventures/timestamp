@@ -6,6 +6,7 @@ import {
 import {Comparator, Comparison} from "@softwareventures/ordered";
 import {map, maximum, minimum} from "@softwareventures/iterable";
 import {map as mapNullable} from "@softwareventures/nullable";
+import {JsDate} from "./js-date";
 
 /** An instant in time, represented as a date and time in the Gregorian
  * Calendar, UTC. */
@@ -223,4 +224,14 @@ export function latestFn(b: TimestampOptions): (a: TimestampOptions) => Timestam
         const as = toReferenceSeconds(a);
         return bs > as ? fromReferenceSeconds(bs) : fromReferenceSeconds(as);
     };
+}
+
+/** Creates a Timestamp of the current time and date. */
+export function now(): Timestamp {
+    const now = new JsDate();
+    return timestamp({
+        year: now.getUTCFullYear(),
+        month: now.getUTCMonth() + 1,
+        day: now.getUTCDate()
+    });
 }
