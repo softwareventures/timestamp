@@ -69,6 +69,11 @@ export function isTimestamp(value: unknown): value is Timestamp {
     );
 }
 
+/** Creates a Timestamp with the specified options. */
+export function timestamp(options: TimestampOptions): Timestamp {
+    return fromReferenceSeconds(toReferenceSeconds(options));
+}
+
 /** Converts the specified Timestamp to a count of seconds since the reference
  * Timestamp of midnight on the morning of 1st January, 1 CE. */
 export function toReferenceSeconds(timestamp: TimestampOptions): number {
