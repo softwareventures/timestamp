@@ -1,3 +1,6 @@
+import {toReferenceDays} from "@softwareventures/date";
+import {toReferenceSeconds as timeToReferenceSeconds} from "@softwareventures/time/time";
+
 /** An instant in time, represented as a date and time in the Gregorian
  * Calendar, UTC. */
 export interface Timestamp {
@@ -60,5 +63,21 @@ export function isTimestamp(value: unknown): value is Timestamp {
         typeof (value as {minutes: unknown}).minutes === "number" &&
         "seconds" in value &&
         typeof (value as {seconds: unknown}).seconds === "number"
+    );
+}
+
+/** Converts the specified Timestamp to a count of seconds since the reference
+ * Timestamp of midnight on the morning of 1st January, 1 CE. */
+export function toReferenceSeconds(timestamp: TimestampOptions): number {
+    const year = timestamp.year ?? 1;
+    const month = timestamp.month ?? 1;
+    const day = timestamp.day ?? 1;
+    const hours = timestamp.hours ?? 0;
+    const minutes = timestamp.minutes ?? 0;
+    const seconds = timestamp.seconds ?? 0;
+
+    return (
+        toReferenceDays({year, month, day}) * 86400 +
+        timeToReferenceSeconds({hours, minutes, seconds})
     );
 }
