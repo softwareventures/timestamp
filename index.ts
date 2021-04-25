@@ -1,5 +1,8 @@
-import {toReferenceDays} from "@softwareventures/date";
-import {toReferenceSeconds as timeToReferenceSeconds} from "@softwareventures/time/time";
+import {toReferenceDays, fromReferenceDays} from "@softwareventures/date";
+import {
+    toReferenceSeconds as timeToReferenceSeconds,
+    fromReferenceSeconds as timeFromReferenceSeconds
+} from "@softwareventures/time/time";
 
 /** An instant in time, represented as a date and time in the Gregorian
  * Calendar, UTC. */
@@ -80,4 +83,15 @@ export function toReferenceSeconds(timestamp: TimestampOptions): number {
         toReferenceDays({year, month, day}) * 86400 +
         timeToReferenceSeconds({hours, minutes, seconds})
     );
+}
+
+/** Creates a Timestamp corresponding to the specified count of seconds since
+ * the reference Timestamp of midnight on the morning of 1st January, 1 CE. */
+export function fromReferenceSeconds(referenceSeconds: number): Timestamp {
+    const referenceDays = Math.floor(referenceSeconds / 86400);
+    const {year, month, day} = fromReferenceDays(referenceDays);
+    const {hours, minutes, seconds} = timeFromReferenceSeconds(
+        referenceSeconds - referenceDays * 86400
+    );
+    return {type: "timestamp", year, month, day, hours, minutes, seconds};
 }
