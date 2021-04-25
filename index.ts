@@ -38,3 +38,24 @@ export interface Timestamp {
      * instant in time with sub-second accuracy. */
     readonly seconds: number;
 }
+
+export function isTimestamp(value: unknown): value is Timestamp {
+    return (
+        typeof value === "object" &&
+        value != null &&
+        "type" in value &&
+        (value as {type: unknown}).type === "timestamp" &&
+        "year" in value &&
+        typeof (value as {year: unknown}).year === "number" &&
+        "month" in value &&
+        typeof (value as {month: unknown}).month === "number" &&
+        "day" in value &&
+        typeof (value as {day: unknown}).day === "number" &&
+        "hours" in value &&
+        typeof (value as {hours: unknown}).hours === "number" &&
+        "minutes" in value &&
+        typeof (value as {minutes: unknown}).minutes === "number" &&
+        "seconds" in value &&
+        typeof (value as {seconds: unknown}).seconds === "number"
+    );
+}
