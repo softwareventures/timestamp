@@ -15,6 +15,7 @@
   "bugs": "https://github.com/softwareventures/timestamp/issues",
   "repository": "github:softwareventures/timestamp",
   "license": "ISC",
+  "sideEffects": false,
   "scripts": {
     "fix": "eslint . --fix && prettier --write .",
     "lint": "eslint . && prettier --check .",
