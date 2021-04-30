@@ -275,8 +275,8 @@ export function parseIso8601(text: string): Timestamp | null {
     return timestamp({year, month, day, hours, minutes, seconds});
 }
 
-export function formatIso8601(options: TimestampOptions): string {
-    const {year, month, day, hours, minutes, seconds} = timestamp(options);
+export function formatIso8601(timestamp: TimestampOptions): string {
+    const {year, month, day, hours, minutes, seconds} = normalize(timestamp);
     return (
         String(year).padStart(4, "0") +
         "-" +
