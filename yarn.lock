@@ -490,15 +490,15 @@
   dependencies:
     tslib "2.0.0"
 
-"@softwareventures/time@^0.8.3":
-  version "0.8.3"
-  resolved "https://registry.yarnpkg.com/@softwareventures/time/-/time-0.8.3.tgz#279694d3f8515c5ede228462d2d0104900df4103"
-  integrity sha512-l8zLjHOb61glXXXnpL48jhqlwHchPqQ1en1w0WF/XF9fsN3in78wb+7w/GlaZY8GlUDNqxrghWB9J19pnUorYw==
+"@softwareventures/time@^0.8.4":
+  version "0.8.4"
+  resolved "https://registry.yarnpkg.com/@softwareventures/time/-/time-0.8.4.tgz#c721c45a0ffaa3103f1d35d47c0bb2d9021fb4c1"
+  integrity sha512-+QxNED/aLBoyRVfJWlpaCntlrP5B8OZlSXzFQJZthn6AAq4+gGxrOEp3kFErfDMw9vULfNiiElgFSOQ6Isc2fA==
   dependencies:
     "@types/is-integer" "1.0.0"
     is-integer "1.0.7"
     is-integer-in-range "^1.0.0 || ^2.0.0"
-    tslib "^1.9.3 || ^2.0.0"
+    tslib "^1.9.3 || ^2.0.0 || ^2.1.0"
 
 "@softwareventures/tsconfig@5.0.1":
   version "5.0.1"
@@ -6076,7 +6076,7 @@ tslib@2.1.0:
   resolved "https://registry.yarnpkg.com/tslib/-/tslib-2.1.0.tgz#da60860f1c2ecaa5703ab7d39bc05b6bf988b97a"
   integrity sha512-hcVC3wYEziELGGmEEXue7D75zbwIIVUMWAVbHItGPx0ziyXxrOMQx4rQEVEV45Ut/1IotuEvwqPopzIOkDMf0A==
 
-tslib@2.2.0, "tslib@^1.11.2 || ^2.0.0", "tslib@^1.9.3 || ^2.0.0":
+tslib@2.2.0, "tslib@^1.11.2 || ^2.0.0", "tslib@^1.9.3 || ^2.0.0", "tslib@^1.9.3 || ^2.0.0 || ^2.1.0":
   version "2.2.0"
   resolved "https://registry.yarnpkg.com/tslib/-/tslib-2.2.0.tgz#fb2c475977e35e241311ede2693cee1ec6698f5c"
   integrity sha512-gS9GVHRU+RGn5KQM2rllAlR3dU6m7AcpJKdtH8gFvQiC4Otgk98XnmMU+nZenHt/+VhnBPWwgrJsyrdcw6i23w==
