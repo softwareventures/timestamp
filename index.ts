@@ -276,7 +276,7 @@ export function parseIso8601(text: string): Timestamp | null {
 }
 
 export function formatIso8601(timestamp: TimestampOptions): string {
-    const {hours, minutes, seconds} = normalize(timestamp);
+    const {minutes, seconds} = normalize(timestamp);
     return (
         padYear(timestamp) +
         "-" +
@@ -284,7 +284,7 @@ export function formatIso8601(timestamp: TimestampOptions): string {
         "-" +
         padDay(timestamp) +
         "T" +
-        String(hours).padStart(2, "0") +
+        padHours(timestamp) +
         ":" +
         String(minutes).padStart(2, "0") +
         ":" +
@@ -363,4 +363,9 @@ const daysOfWeek: readonly DayOfWeek[] = [
 export function dayOfWeek(timestamp: TimestampOptions): DayOfWeek {
     const {year, month, day} = normalize(timestamp);
     return daysOfWeek[(8 + (toReferenceDays({year, month, day}) % 7)) % 7];
+}
+
+export function padHours(timestamp: TimestampOptions): string {
+    const {hours} = normalize(timestamp);
+    return String(hours).padStart(2, "0");
 }
