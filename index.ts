@@ -271,3 +271,21 @@ export function parseIso8601(text: string): Timestamp | null {
 
     return timestamp({year, month, day, hours, minutes, seconds});
 }
+
+export function formatIso8601(options: TimestampOptions): string {
+    const {year, month, day, hours, minutes, seconds} = timestamp(options);
+    return (
+        String(year).padStart(4, "0") +
+        "-" +
+        String(month).padStart(2, "0") +
+        "-" +
+        String(day).padStart(2, "0") +
+        "T" +
+        String(hours).padStart(2, "0") +
+        ":" +
+        String(minutes).padStart(2, "0") +
+        ":" +
+        String(seconds).replace(/^\d+/, s => s.padStart(2, "0")) +
+        "Z"
+    );
+}
