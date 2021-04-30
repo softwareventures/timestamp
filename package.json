@@ -1,5 +1,4 @@
 {
-  "private": true,
   "name": "@softwareventures/timestamp",
   "version": "0.0.0-development",
   "description": "Data type representing an instant in time",
@@ -64,5 +63,8 @@
   },
   "release": {
     "extends": "@softwareventures/semantic-release-config"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }
