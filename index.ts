@@ -292,3 +292,36 @@ export function formatIso8601(timestamp: TimestampOptions): string {
         "Z"
     );
 }
+
+export type MonthName =
+    | "January"
+    | "February"
+    | "March"
+    | "April"
+    | "May"
+    | "June"
+    | "July"
+    | "August"
+    | "September"
+    | "October"
+    | "November"
+    | "December";
+
+const monthNames: readonly MonthName[] = [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December"
+];
+
+export function monthName(timestamp: TimestampOptions): MonthName {
+    return monthNames[normalize(timestamp).month - 1];
+}
