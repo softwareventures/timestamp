@@ -275,22 +275,17 @@ export function parseIso8601(text: string): Timestamp | null {
     return timestamp({year, month, day, hours, minutes, seconds});
 }
 
-export function formatIso8601(timestamp: TimestampOptions): string {
-    return (
-        padYear(timestamp) +
-        "-" +
-        padMonth(timestamp) +
-        "-" +
-        padDay(timestamp) +
-        "T" +
-        padHours(timestamp) +
-        ":" +
-        padMinutes(timestamp) +
-        ":" +
-        padSeconds(timestamp) +
-        "Z"
-    );
+export function format(
+    texts: readonly string[],
+    ...formatters: ReadonlyArray<(timestamp: Timestamp) => string>
+): (timestamp: TimestampOptions) => string {
+    return options => {
+        const timestamp = normalize(options);
+        return texts.map((text, i) => `${text}${formatters[i]?.(timestamp) ?? ""}`).join("");
+    };
 }
+
+export const formatIso8601 = format`${padYear}-${padMonth}-${padDay}T${padHours}:${padMinutes}:${padSeconds}Z`;
 
 export function padYear(timestamp: TimestampOptions): string {
     const {year} = normalize(timestamp);
