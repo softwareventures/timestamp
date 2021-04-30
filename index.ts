@@ -64,6 +64,7 @@ export interface Timestamp {
 /** Options for creating a Timestamp. */
 export type TimestampOptions = Partial<Timestamp>;
 
+/** Tests if the specified value is a Timestamp. */
 export function isTimestamp(value: unknown): value is Timestamp {
     return (
         typeof value === "object" &&
