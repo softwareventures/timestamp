@@ -276,11 +276,11 @@ export function parseIso8601(text: string): Timestamp | null {
 }
 
 export function formatIso8601(timestamp: TimestampOptions): string {
-    const {month, day, hours, minutes, seconds} = normalize(timestamp);
+    const {day, hours, minutes, seconds} = normalize(timestamp);
     return (
         padYear(timestamp) +
         "-" +
-        String(month).padStart(2, "0") +
+        padMonth(timestamp) +
         "-" +
         String(day).padStart(2, "0") +
         "T" +
@@ -296,6 +296,11 @@ export function formatIso8601(timestamp: TimestampOptions): string {
 export function padYear(timestamp: TimestampOptions): string {
     const {year} = normalize(timestamp);
     return String(year).padStart(4, "0");
+}
+
+export function padMonth(timestamp: TimestampOptions): string {
+    const {month} = normalize(timestamp);
+    return String(month).padStart(2, "0");
 }
 
 export type MonthName =
