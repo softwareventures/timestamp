@@ -276,7 +276,7 @@ export function parseIso8601(text: string): Timestamp | null {
 }
 
 export function formatIso8601(timestamp: TimestampOptions): string {
-    const {minutes, seconds} = normalize(timestamp);
+    const {seconds} = normalize(timestamp);
     return (
         padYear(timestamp) +
         "-" +
@@ -286,7 +286,7 @@ export function formatIso8601(timestamp: TimestampOptions): string {
         "T" +
         padHours(timestamp) +
         ":" +
-        String(minutes).padStart(2, "0") +
+        padMinutes(timestamp) +
         ":" +
         String(seconds).replace(/^\d+/, s => s.padStart(2, "0")) +
         "Z"
@@ -368,4 +368,9 @@ export function dayOfWeek(timestamp: TimestampOptions): DayOfWeek {
 export function padHours(timestamp: TimestampOptions): string {
     const {hours} = normalize(timestamp);
     return String(hours).padStart(2, "0");
+}
+
+export function padMinutes(timestamp: TimestampOptions): string {
+    const {minutes} = normalize(timestamp);
+    return String(minutes).padStart(2, "0");
 }
