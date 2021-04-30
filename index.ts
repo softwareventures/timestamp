@@ -276,13 +276,13 @@ export function parseIso8601(text: string): Timestamp | null {
 }
 
 export function formatIso8601(timestamp: TimestampOptions): string {
-    const {day, hours, minutes, seconds} = normalize(timestamp);
+    const {hours, minutes, seconds} = normalize(timestamp);
     return (
         padYear(timestamp) +
         "-" +
         padMonth(timestamp) +
         "-" +
-        String(day).padStart(2, "0") +
+        padDay(timestamp) +
         "T" +
         String(hours).padStart(2, "0") +
         ":" +
@@ -334,6 +334,11 @@ const monthNames: readonly MonthName[] = [
 
 export function monthName(timestamp: TimestampOptions): MonthName {
     return monthNames[normalize(timestamp).month - 1];
+}
+
+export function padDay(timestamp: TimestampOptions): string {
+    const {day} = normalize(timestamp);
+    return String(day).padStart(2, "0");
 }
 
 export type DayOfWeek =
