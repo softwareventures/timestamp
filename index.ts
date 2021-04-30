@@ -325,3 +325,27 @@ const monthNames: readonly MonthName[] = [
 export function monthName(timestamp: TimestampOptions): MonthName {
     return monthNames[normalize(timestamp).month - 1];
 }
+
+export type DayOfWeek =
+    | "Sunday"
+    | "Monday"
+    | "Tuesday"
+    | "Wednesday"
+    | "Thursday"
+    | "Friday"
+    | "Saturday";
+
+const daysOfWeek: readonly DayOfWeek[] = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday"
+];
+
+export function dayOfWeek(timestamp: TimestampOptions): DayOfWeek {
+    const {year, month, day} = normalize(timestamp);
+    return daysOfWeek[(8 + (toReferenceDays({year, month, day}) % 7)) % 7];
+}
