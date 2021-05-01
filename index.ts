@@ -1,4 +1,5 @@
 import {fromReferenceDays, toReferenceDays} from "@softwareventures/date";
+import * as format from "@softwareventures/format-timestamp";
 import {
     fromReferenceSeconds as timeFromReferenceSeconds,
     toReferenceSeconds as timeToReferenceSeconds
@@ -275,101 +276,8 @@ export function parseIso8601(text: string): Timestamp | null {
     return timestamp({year, month, day, hours, minutes, seconds});
 }
 
-export function format(
-    texts: readonly string[],
-    ...formatters: ReadonlyArray<(timestamp: Timestamp) => string>
-): (timestamp: TimestampOptions) => string {
-    return options => {
-        const timestamp = normalize(options);
-        return texts.map((text, i) => `${text}${formatters[i]?.(timestamp) ?? ""}`).join("");
-    };
-}
-
-export const formatIso8601 = format`${padYear}-${padMonth}-${padDay}T${padHours}:${padMinutes}:${padSeconds}Z`;
-
-export function padYear(timestamp: TimestampOptions): string {
-    const {year} = normalize(timestamp);
-    return String(year).padStart(4, "0");
-}
-
-export function padMonth(timestamp: TimestampOptions): string {
-    const {month} = normalize(timestamp);
-    return String(month).padStart(2, "0");
-}
-
-export type MonthName =
-    | "January"
-    | "February"
-    | "March"
-    | "April"
-    | "May"
-    | "June"
-    | "July"
-    | "August"
-    | "September"
-    | "October"
-    | "November"
-    | "December";
-
-const monthNames: readonly MonthName[] = [
-    "January",
-    "February",
-    "March",
-    "April",
-    "May",
-    "June",
-    "July",
-    "August",
-    "September",
-    "October",
-    "November",
-    "December"
-];
-
-export function monthName(timestamp: TimestampOptions): MonthName {
-    return monthNames[normalize(timestamp).month - 1];
-}
-
-export function padDay(timestamp: TimestampOptions): string {
-    const {day} = normalize(timestamp);
-    return String(day).padStart(2, "0");
-}
-
-export type DayOfWeek =
-    | "Sunday"
-    | "Monday"
-    | "Tuesday"
-    | "Wednesday"
-    | "Thursday"
-    | "Friday"
-    | "Saturday";
-
-const daysOfWeek: readonly DayOfWeek[] = [
-    "Sunday",
-    "Monday",
-    "Tuesday",
-    "Wednesday",
-    "Thursday",
-    "Friday",
-    "Saturday"
-];
-
-export function dayOfWeek(timestamp: TimestampOptions): DayOfWeek {
-    const {year, month, day} = normalize(timestamp);
-    return daysOfWeek[(8 + (toReferenceDays({year, month, day}) % 7)) % 7];
-}
-
-export function padHours(timestamp: TimestampOptions): string {
-    const {hours} = normalize(timestamp);
-    return String(hours).padStart(2, "0");
-}
-
-export function padMinutes(timestamp: TimestampOptions): string {
-    const {minutes} = normalize(timestamp);
-    return String(minutes).padStart(2, "0");
-}
-
-export function padSeconds(timestamp: TimestampOptions): string {
-    const {seconds} = normalize(timestamp);
-    return String(seconds).replace(/^\d+/, s => s.padStart(2, "0"));
-}
+/** Formats the specified Timestamp as IS0 8601 extended, rounded down to the
+ * next lower second e.g. 2021-05-01T11:57:23Z.
+ *
+ * For other formats, see @softwareventures/format-timestamp. */
+export const formatIso8601 = format.iso8601;
