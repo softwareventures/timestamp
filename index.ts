@@ -256,9 +256,10 @@ export function now(): Timestamp {
  * Both extended "YYYY-MM-DDTHH:MM:SS.ssss+hh:mm and basic
  * "YYYYMMDDTHHMMSS.ssss+hhmm" ISO 8601 formats are accepted. */
 export function parseIso8601(text: string): Timestamp | null {
-    const match = /^([+-]?\d{4,})-?(\d{2})-?(\d{2})T(\d{2}):?(\d{2}):?(\d{2}(?:[.,]?\d+)?)(?:Z|([+-][0-9]{2}):?([0-9]{2}))$/.exec(
-        text
-    );
+    const match =
+        /^([+-]?\d{4,})-?(\d{2})-?(\d{2})T(\d{2}):?(\d{2}):?(\d{2}(?:[.,]?\d+)?)(?:Z|([+-][0-9]{2}):?([0-9]{2}))$/.exec(
+            text
+        );
     if (match == null) {
         return null;
     }
