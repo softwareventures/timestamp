@@ -62,7 +62,10 @@ export interface Timestamp {
     readonly seconds: number;
 }
 
-/** Options for creating a Timestamp. */
+/** Options for creating a Timestamp.
+ *
+ * An instance of {@link Timestamp} may always be used in place of
+ * TimestampOptions. */
 export type TimestampOptions = Partial<Timestamp>;
 
 /** Tests if the specified value is a Timestamp. */
