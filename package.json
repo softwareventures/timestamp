@@ -22,6 +22,9 @@
     "semantic-release": "semantic-release",
     "test": "ava"
   },
+  "engines": {
+    "node": ">= 12"
+  },
   "dependencies": {
     "@softwareventures/date": "^1.4.2",
     "@softwareventures/format-timestamp": "^1.0.0-alpha.1",
