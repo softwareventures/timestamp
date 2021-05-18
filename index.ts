@@ -250,14 +250,14 @@ export function now(): Timestamp {
 /** Parses a Timestamp from text in ISO 8601 format.
  *
  * The ISO 8601 text must specify a time zone offset, which should usually be
- * "Z" for UTC. If any other offset is specified then the date and time will
+ * `Z` for UTC. If any other offset is specified then the date and time will
  * be converted to and stored as UTC.
  *
  * If the specified text is not a valid ISO 8601 date-time then this function
  * returns `null`.
  *
- * Both extended "YYYY-MM-DDTHH:MM:SS.ssss+hh:mm and basic
- * "YYYYMMDDTHHMMSS.ssss+hhmm" ISO 8601 formats are accepted. */
+ * Both extended `YYYY-MM-DDTHH:MM:SS.ssss+hh:mm` and basic
+ * `YYYYMMDDTHHMMSS.ssss+hhmm` ISO 8601 formats are accepted. */
 export function parseIso8601(text: string): Timestamp | null {
     const match =
         /^([+-]?\d{4,})-?(\d{2})-?(\d{2})T(\d{2}):?(\d{2}):?(\d{2}(?:[.,]?\d+)?)(?:Z|([+-][0-9]{2}):?([0-9]{2}))$/.exec(
