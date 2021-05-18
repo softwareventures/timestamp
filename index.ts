@@ -281,7 +281,7 @@ export function parseIso8601(text: string): Timestamp | null {
 }
 
 /** Formats the specified Timestamp as IS0 8601 extended, rounded down to the
- * next lower second e.g. 2021-05-01T11:57:23Z.
+ * next lower second e.g. `2021-05-01T11:57:23Z`.
  *
  * For other formats, see @softwareventures/format-timestamp. */
 export const formatIso8601 = format.iso8601;
