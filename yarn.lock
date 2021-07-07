@@ -441,16 +441,16 @@
   resolved "https://registry.yarnpkg.com/@sindresorhus/is/-/is-0.14.0.tgz#9fb3a3cf3132328151f353de4632e01e52102bea"
   integrity sha512-9NET910DNaIPngYnLLPeg+Ogzqsi9uM4mSboU5y6p8S5DzMTVEsJZrawi+BoDNUVBa2DhJqQYUFvMDfgU062LQ==
 
-"@softwareventures/date@^1.4.2":
-  version "1.4.2"
-  resolved "https://registry.yarnpkg.com/@softwareventures/date/-/date-1.4.2.tgz#fcefb06ef81e92d50452a1a0f5f32fee15c30b98"
-  integrity sha512-UhU0Hiy5xG4qK0fF4pZAJ2jUqfT9V4ys2lquaxadM1AQr1Por/Qgjv14OxwPe4njdS5tqy3Uzv2isoA6ELTOhg==
+"@softwareventures/date@^1.4.2 || ^2.0.0":
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/@softwareventures/date/-/date-2.0.0.tgz#091c3537c62a3c8fa221f2005fa262ebc043d343"
+  integrity sha512-ZKkVYVU7zqfPC5evOPbDH+hgtdP5m9+LVXT8ipAvmSepHQAoG+e0VayNzDHKDMsunqzy2TC+ju1n9Pp/aoaRXg==
   dependencies:
-    "@softwareventures/ordered" "^0.2.1"
+    "@softwareventures/ordered" "^0.2.1 || ^1.0.0"
     "@types/is-integer" "1.0.0"
     is-integer "1.0.7"
     is-integer-in-range "^1.0.0 || ^2.0.0"
-    tslib "^1.9.3 || ^2.0.0"
+    tslib "^1.9.3 || ^2.0.0 || ^2.1.0"
 
 "@softwareventures/eslint-config@3.6.3":
   version "3.6.3"
@@ -483,7 +483,14 @@
   dependencies:
     tslib "2.2.0"
 
-"@softwareventures/ordered@^0.2.1", "@softwareventures/ordered@^0.2.2":
+"@softwareventures/ordered@^0.2.1 || ^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@softwareventures/ordered/-/ordered-1.0.0.tgz#d803eef43bb0b4ccfcd78d2928fe38b5109ad99e"
+  integrity sha512-SUFUYDWEPAS54LpGH+mRHwkGuTINPDt4OOS3h/Zr9f12JPFz2cqh6Xxwg75BZqwaeONuUwmklJVMRmgvxSSkPA==
+  dependencies:
+    tslib "^1.9.3 || ^2.0.0 || ^2.1.0"
+
+"@softwareventures/ordered@^0.2.2":
   version "0.2.2"
   resolved "https://registry.yarnpkg.com/@softwareventures/ordered/-/ordered-0.2.2.tgz#e8b55c57a7219a90e0cc6a27a793c4598e5ae9aa"
   integrity sha512-n3Kkk9jZ+i2Az7YqnJR3TimhsVSiTfwN9ybDfPcJvvCge0cINszO754n4/pdlCyLYVOn2VzTVFDVTrj+xFvNFQ==
