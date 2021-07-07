@@ -476,6 +476,17 @@
     is-integer-in-range "^1.0.0 || ^2.0.0"
     tslib "^1.9.3 || ^2.0.0"
 
+"@softwareventures/date@^1.4.2 || ^2.0.0":
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/@softwareventures/date/-/date-2.0.1.tgz#ce173e7be03763f5b463c817fb3c14536980c00c"
+  integrity sha512-ShYwL8CxNxgSyEyecrBu0m5pJGg1mej7i+O4QqeUUocHeTegsyVX7T86/xStkqO/WZkZqSbgk70NkYpCNsuB0A==
+  dependencies:
+    "@softwareventures/ordered" "^0.2.1 || ^1.0.0"
+    "@types/is-integer" "1.0.0"
+    is-integer "1.0.7"
+    is-integer-in-range "^1.0.0 || ^2.0.0 || ^3.0.0"
+    tslib "^1.9.3 || ^2.0.0 || ^2.1.0"
+
 "@softwareventures/dictionary@^0.6.0 || ^0.7.0 || ^0.8.0":
   version "0.8.1"
   resolved "https://registry.yarnpkg.com/@softwareventures/dictionary/-/dictionary-0.8.1.tgz#6a0fdd39c8181471337561c6724272de72872ad7"
@@ -541,7 +552,7 @@
   dependencies:
     tslib "^1.9.3 || ^2.0.0"
 
-"@softwareventures/ordered@^0.2.2 || ^1.0.0":
+"@softwareventures/ordered@^0.2.1 || ^1.0.0", "@softwareventures/ordered@^0.2.2 || ^1.0.0":
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/@softwareventures/ordered/-/ordered-1.0.0.tgz#d803eef43bb0b4ccfcd78d2928fe38b5109ad99e"
   integrity sha512-SUFUYDWEPAS54LpGH+mRHwkGuTINPDt4OOS3h/Zr9f12JPFz2cqh6Xxwg75BZqwaeONuUwmklJVMRmgvxSSkPA==
@@ -3085,6 +3096,15 @@ is-installed-globally@^0.4.0:
     "@types/is-integer" "^1.0.0"
     is-integer "^1.0.7"
     tslib "2.1.0"
+
+"is-integer-in-range@^1.0.0 || ^2.0.0 || ^3.0.0":
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/is-integer-in-range/-/is-integer-in-range-3.0.0.tgz#23e8c8c8b22fe42b447d35f0258ac30f0b96c1a2"
+  integrity sha512-rUZ09wQ+jq1CDBqVuwOJxKWoUn7tFSF3SJacH792Ryrh+WSUlLhnPpuXVoGJizHTJyQoZn4P9n9Vk4zqNE+VMw==
+  dependencies:
+    "@types/is-integer" "^1.0.0"
+    is-integer "^1.0.7"
+    tslib "2.3.0"
 
 is-integer@1.0.7, is-integer@^1.0.7:
   version "1.0.7"
