@@ -3,18 +3,17 @@
   "version": "0.0.0-development",
   "description": "Data type representing an instant in time",
   "keywords": [
-    "time",
+    "TypeScript",
     "date",
     "date-time",
-    "timestamp",
-    "TypeScript"
+    "time",
+    "timestamp"
   ],
   "author": "Daniel Cassidy <mail@danielcassidy.me.uk>",
   "homepage": "https://github.com/softwareventures/timestamp",
   "bugs": "https://github.com/softwareventures/timestamp/issues",
   "repository": "github:softwareventures/timestamp",
   "license": "ISC",
-  "sideEffects": false,
   "scripts": {
     "fix": "eslint . --fix && prettier --write .",
     "lint": "eslint . && prettier --check .",
@@ -22,6 +21,7 @@
     "semantic-release": "semantic-release",
     "test": "ava"
   },
+  "sideEffects": false,
   "engines": {
     "node": ">= 12"
   },
