@@ -8,6 +8,7 @@ import {Comparator, Comparison} from "@softwareventures/ordered";
 import {map, maximum, minimum} from "@softwareventures/iterable";
 import {map as mapNullable} from "@softwareventures/nullable";
 import {JsDate} from "./js-date";
+import {hasProperty} from "unknown";
 
 /** An instant in time, represented as a date and time in the Gregorian
  * Calendar, UTC. */
@@ -73,20 +74,20 @@ export function isTimestamp(value: unknown): value is Timestamp {
     return (
         typeof value === "object" &&
         value != null &&
-        "type" in value &&
-        (value as {type: unknown}).type === "timestamp" &&
-        "year" in value &&
-        typeof (value as {year: unknown}).year === "number" &&
-        "month" in value &&
-        typeof (value as {month: unknown}).month === "number" &&
-        "day" in value &&
-        typeof (value as {day: unknown}).day === "number" &&
-        "hours" in value &&
-        typeof (value as {hours: unknown}).hours === "number" &&
-        "minutes" in value &&
-        typeof (value as {minutes: unknown}).minutes === "number" &&
-        "seconds" in value &&
-        typeof (value as {seconds: unknown}).seconds === "number"
+        hasProperty(value, "type") &&
+        value.type === "timestamp" &&
+        hasProperty(value, "year") &&
+        typeof value.year === "number" &&
+        hasProperty(value, "month") &&
+        typeof value.month === "number" &&
+        hasProperty(value, "day") &&
+        typeof value.day === "number" &&
+        hasProperty(value, "hours") &&
+        typeof value.hours === "number" &&
+        hasProperty(value, "minutes") &&
+        typeof value.minutes === "number" &&
+        hasProperty(value, "seconds") &&
+        typeof value.seconds === "number"
     );
 }
 
