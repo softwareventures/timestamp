@@ -3,7 +3,7 @@ import * as format from "@softwareventures/format-timestamp";
 import {
     fromReferenceSeconds as timeFromReferenceSeconds,
     toReferenceSeconds as timeToReferenceSeconds
-} from "@softwareventures/time/time";
+} from "@softwareventures/time";
 import {Comparator, Comparison} from "@softwareventures/ordered";
 import {map, maximum, minimum} from "@softwareventures/iterable";
 import {map as mapNullable} from "@softwareventures/nullable";
