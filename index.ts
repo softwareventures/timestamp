@@ -9,7 +9,6 @@ import {map, maximum, minimum} from "@softwareventures/iterable";
 import {map as mapNullable} from "@softwareventures/nullable";
 import {hasProperty} from "unknown";
 import {JsDate} from "./js-date";
-import {hasProperty} from "unknown";
 
 /** An instant in time, represented as a date and time in the Gregorian
  * Calendar, UTC. */
