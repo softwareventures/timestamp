@@ -490,6 +490,13 @@
   dependencies:
     tslib "^1.9.3 || ^2.0.0"
 
+"@softwareventures/ordered@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@softwareventures/ordered/-/ordered-1.0.0.tgz#d803eef43bb0b4ccfcd78d2928fe38b5109ad99e"
+  integrity sha512-SUFUYDWEPAS54LpGH+mRHwkGuTINPDt4OOS3h/Zr9f12JPFz2cqh6Xxwg75BZqwaeONuUwmklJVMRmgvxSSkPA==
+  dependencies:
+    tslib "^1.9.3 || ^2.0.0 || ^2.1.0"
+
 "@softwareventures/prettier-config@1.0.3":
   version "1.0.3"
   resolved "https://registry.yarnpkg.com/@softwareventures/prettier-config/-/prettier-config-1.0.3.tgz#dac16415dfe766aeb24f301f1d62d3590f7bc819"
@@ -504,15 +511,17 @@
   dependencies:
     tslib "2.3.0"
 
-"@softwareventures/time@^0.8.3":
-  version "0.8.4"
-  resolved "https://registry.yarnpkg.com/@softwareventures/time/-/time-0.8.4.tgz#c721c45a0ffaa3103f1d35d47c0bb2d9021fb4c1"
-  integrity sha512-+QxNED/aLBoyRVfJWlpaCntlrP5B8OZlSXzFQJZthn6AAq4+gGxrOEp3kFErfDMw9vULfNiiElgFSOQ6Isc2fA==
+"@softwareventures/time@^0.8.3 || ^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@softwareventures/time/-/time-1.0.0.tgz#b1b16c5b27ef7d54a9521206a839c313ad7221c4"
+  integrity sha512-914SUFpVoTP3ODxkajpCbNiw3zE30GqjmMZe9RpvpwRIixKp8F/r8BD/vejTLQJKOsffBt8RuOkPN1+Xv+QBmQ==
   dependencies:
+    "@softwareventures/ordered" "^1.0.0"
     "@types/is-integer" "1.0.0"
-    is-integer "1.0.7"
-    is-integer-in-range "^1.0.0 || ^2.0.0"
+    is-integer "^1.0.7"
+    is-integer-in-range "^3.0.1"
     tslib "^1.9.3 || ^2.0.0 || ^2.1.0"
+    unknown "^0.2.5"
 
 "@softwareventures/tsconfig@5.1.1":
   version "5.1.1"
@@ -3278,6 +3287,15 @@ is-installed-globally@^0.4.0:
     "@types/is-integer" "^1.0.0"
     is-integer "^1.0.7"
     tslib "2.1.0"
+
+is-integer-in-range@^3.0.1:
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/is-integer-in-range/-/is-integer-in-range-3.0.1.tgz#3572cff0d316a9c56478c249619a635721883fc8"
+  integrity sha512-TxxzQQXksIbn8ORDgi1Rm5swhVx2F3iMg+SXCTYMfs4MsaR9n6tOGNjH5zYwRqkQcSilOMkDOrgiEzqrn/eZZw==
+  dependencies:
+    "@types/is-integer" "^1.0.0"
+    is-integer "^1.0.7"
+    tslib "2.3.1"
 
 is-integer@1.0.7, is-integer@^1.0.7:
   version "1.0.7"
@@ -6091,6 +6109,11 @@ tslib@2.3.0:
   resolved "https://registry.yarnpkg.com/tslib/-/tslib-2.3.0.tgz#803b8cdab3e12ba581a4ca41c8839bbb0dacb09e"
   integrity sha512-N82ooyxVNm6h1riLCoyS9e3fuJ3AMG2zIZs2Gd1ATcSFjSA23Q0fzjjZeh0jbJvWVDZ0cJT8yaNNaaXHzueNjg==
 
+tslib@2.3.1:
+  version "2.3.1"
+  resolved "https://registry.yarnpkg.com/tslib/-/tslib-2.3.1.tgz#e8a335add5ceae51aa261d32a490158ef042ef01"
+  integrity sha512-77EbyPPpMz+FRFRuAFlWMtmgUWGe9UOG2Z25NqCwiIjRhOf5iKGuzSe5P2w1laq+FkRy4p+PCuVkJSGkzTEKVw==
+
 tslib@2.4.0, "tslib@^1.11.2 || ^2.0.0", "tslib@^1.9.3 || ^2.0.0", "tslib@^1.9.3 || ^2.0.0 || ^2.1.0":
   version "2.4.0"
   resolved "https://registry.yarnpkg.com/tslib/-/tslib-2.4.0.tgz#7cecaa7f073ce680a05847aa77be941098f36dc3"
@@ -6260,6 +6283,11 @@ universalify@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/universalify/-/universalify-2.0.0.tgz#75a4984efedc4b08975c5aeb73f530d02df25717"
   integrity sha512-hAZsKq7Yy11Zu1DE0OzWjw7nnLZmJZYTDZZyEFHZdUhV8FkH5MCfoU1XMaxXovpyW5nq5scPqq0ZDP9Zyl04oQ==
+
+unknown@^0.2.5:
+  version "0.2.5"
+  resolved "https://registry.yarnpkg.com/unknown/-/unknown-0.2.5.tgz#673a9bd591fa5ac3bbc56531e68fb6e7cef91c98"
+  integrity sha512-DzDwBz0BF7SZnzfiw6RmESjDKRpJv97kZkcb52xifBGR2CNgvra2DIlhgEXiHJeNOamYHapcPTxam8ff5x+2YA==
 
 unset-value@^1.0.0:
   version "1.0.0"
