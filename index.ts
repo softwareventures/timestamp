@@ -7,6 +7,7 @@ import {
 import {Comparator, Comparison} from "@softwareventures/ordered";
 import {map, maximum, minimum} from "@softwareventures/iterable";
 import {map as mapNullable} from "@softwareventures/nullable";
+import {hasProperty} from "unknown";
 import {JsDate} from "./js-date";
 import {hasProperty} from "unknown";
 
