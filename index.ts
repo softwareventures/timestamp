@@ -102,7 +102,12 @@ export function timestamp(options: TimestampOptions): Timestamp {
     return fromReferenceSeconds(toReferenceSeconds(options));
 }
 
-/** Creates a Timestamp with the specified options. */
+/** Creates a Timestamp with the specified options.
+ *
+ * If any numeric components are unspecified, they default to zero.
+ *
+ * If any numeric components are outside the expected range, then
+ * the resulting Timestamp will be normalized. */
 export const normalize = timestamp;
 
 /** Converts the specified Timestamp to a count of seconds since the reference
