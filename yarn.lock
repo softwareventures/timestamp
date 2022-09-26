@@ -490,6 +490,13 @@
   dependencies:
     tslib "^1.9.3 || ^2.0.0"
 
+"@softwareventures/ordered@^0.2.2 || ^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@softwareventures/ordered/-/ordered-1.0.0.tgz#d803eef43bb0b4ccfcd78d2928fe38b5109ad99e"
+  integrity sha512-SUFUYDWEPAS54LpGH+mRHwkGuTINPDt4OOS3h/Zr9f12JPFz2cqh6Xxwg75BZqwaeONuUwmklJVMRmgvxSSkPA==
+  dependencies:
+    tslib "^1.9.3 || ^2.0.0 || ^2.1.0"
+
 "@softwareventures/prettier-config@1.0.3":
   version "1.0.3"
   resolved "https://registry.yarnpkg.com/@softwareventures/prettier-config/-/prettier-config-1.0.3.tgz#dac16415dfe766aeb24f301f1d62d3590f7bc819"
