@@ -1,11 +1,14 @@
 import {fromReferenceDays, toReferenceDays} from "@softwareventures/date";
+import * as format from "@softwareventures/format-timestamp";
 import {
     fromReferenceSeconds as timeFromReferenceSeconds,
     toReferenceSeconds as timeToReferenceSeconds
-} from "@softwareventures/time/time";
-import {Comparator, Comparison} from "@softwareventures/ordered";
+} from "@softwareventures/time";
+import type {Comparator} from "@softwareventures/ordered";
+import {Comparison} from "@softwareventures/ordered";
 import {map, maximum, minimum} from "@softwareventures/iterable";
-import {map as mapNullable} from "@softwareventures/nullable";
+import {map as mapNullable, notNull} from "@softwareventures/nullable";
+import {hasProperty} from "unknown";
 import {JsDate} from "./js-date";
 
 /** An instant in time, represented as a date and time in the Gregorian
@@ -61,7 +64,10 @@ export interface Timestamp {
     readonly seconds: number;
 }
 
-/** Options for creating a Timestamp. */
+/** Options for creating a Timestamp.
+ *
+ * An instance of {@link Timestamp} may always be used in place of
+ * TimestampOptions. */
 export type TimestampOptions = Partial<Timestamp>;
 
 /** Tests if the specified value is a Timestamp. */
@@ -69,27 +75,40 @@ export function isTimestamp(value: unknown): value is Timestamp {
     return (
         typeof value === "object" &&
         value != null &&
-        "type" in value &&
-        (value as {type: unknown}).type === "timestamp" &&
-        "year" in value &&
-        typeof (value as {year: unknown}).year === "number" &&
-        "month" in value &&
-        typeof (value as {month: unknown}).month === "number" &&
-        "day" in value &&
-        typeof (value as {day: unknown}).day === "number" &&
-        "hours" in value &&
-        typeof (value as {hours: unknown}).hours === "number" &&
-        "minutes" in value &&
-        typeof (value as {minutes: unknown}).minutes === "number" &&
-        "seconds" in value &&
-        typeof (value as {seconds: unknown}).seconds === "number"
+        hasProperty(value, "type") &&
+        value.type === "timestamp" &&
+        hasProperty(value, "year") &&
+        typeof value.year === "number" &&
+        hasProperty(value, "month") &&
+        typeof value.month === "number" &&
+        hasProperty(value, "day") &&
+        typeof value.day === "number" &&
+        hasProperty(value, "hours") &&
+        typeof value.hours === "number" &&
+        hasProperty(value, "minutes") &&
+        typeof value.minutes === "number" &&
+        hasProperty(value, "seconds") &&
+        typeof value.seconds === "number"
     );
 }
 
-/** Creates a Timestamp with the specified options. */
+/** Creates a Timestamp with the specified options.
+ *
+ * If any numeric components are unspecified, they default to zero.
+ *
+ * If any numeric components are outside the expected range, then
+ * the resulting Timestamp will be normalized. */
 export function timestamp(options: TimestampOptions): Timestamp {
     return fromReferenceSeconds(toReferenceSeconds(options));
 }
+
+/** Creates a Timestamp with the specified options.
+ *
+ * If any numeric components are unspecified, they default to zero.
+ *
+ * If any numeric components are outside the expected range, then
+ * the resulting Timestamp will be normalized. */
+export const normalize = timestamp;
 
 /** Converts the specified Timestamp to a count of seconds since the reference
  * Timestamp of midnight on the morning of 1st January, 1 CE. */
@@ -239,3 +258,42 @@ export function now(): Timestamp {
         seconds: now.getUTCSeconds() + now.getUTCMilliseconds() / 1000
     });
 }
+
+/** Parses a Timestamp from text in ISO 8601 format.
+ *
+ * The ISO 8601 text must specify a time zone offset, which should usually be
+ * `Z` for UTC. If any other offset is specified then the date and time will
+ * be converted to and stored as UTC.
+ *
+ * If the specified text is not a valid ISO 8601 date-time then this function
+ * returns `null`.
+ *
+ * Both extended `YYYY-MM-DDTHH:MM:SS.ssss+hh:mm` and basic
+ * `YYYYMMDDTHHMMSS.ssss+hhmm` ISO 8601 formats are accepted. */
+export function parseIso8601(text: string): Timestamp | null {
+    const match =
+        /^([+-]?\d{4,})-?(\d{2})-?(\d{2})T(\d{2}):?(\d{2}):?(\d{2}(?:[.,]?\d+)?)(?:Z|([+-][0-9]{2}):?([0-9]{2}))$/u.exec(
+            text
+        );
+    if (match == null) {
+        return null;
+    }
+
+    const offsetHours = match[7] == null ? 0 : parseInt(match[7], 10);
+    const offsetMinutes = match[8] == null ? 0 : parseInt(match[8], 10) * Math.sign(offsetHours);
+
+    const year = parseInt(notNull(match[1]), 10);
+    const month = parseInt(notNull(match[2]), 10);
+    const day = parseInt(notNull(match[3]), 10);
+    const hours = parseInt(notNull(match[4]), 10) - offsetHours;
+    const minutes = parseInt(notNull(match[5]), 10) - offsetMinutes;
+    const seconds = parseFloat(notNull(match[6]).replace(",", "."));
+
+    return timestamp({year, month, day, hours, minutes, seconds});
+}
+
+/** Formats the specified Timestamp as IS0 8601 extended, rounded down to the
+ * next lower second e.g. `2021-05-01T11:57:23Z`.
+ *
+ * For other formats, see @softwareventures/format-timestamp. */
+export const formatIso8601 = format.iso8601;
