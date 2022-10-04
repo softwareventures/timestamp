@@ -23,7 +23,7 @@
   },
   "sideEffects": false,
   "engines": {
-    "node": "^14 || >=16"
+    "node": "^14 || ^16 || >=18"
   },
   "dependencies": {
     "@softwareventures/date": "^1.4.2 || ^2.0.0",
