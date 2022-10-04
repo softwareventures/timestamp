@@ -6,7 +6,7 @@ import {
 } from "@softwareventures/time";
 import {Comparator, Comparison} from "@softwareventures/ordered";
 import {map, maximum, minimum} from "@softwareventures/iterable";
-import {map as mapNullable} from "@softwareventures/nullable";
+import {map as mapNullable, notNull} from "@softwareventures/nullable";
 import {hasProperty} from "unknown";
 import {JsDate} from "./js-date";
 
@@ -281,12 +281,12 @@ export function parseIso8601(text: string): Timestamp | null {
     const offsetHours = match[7] == null ? 0 : parseInt(match[7], 10);
     const offsetMinutes = match[8] == null ? 0 : parseInt(match[8], 10) * Math.sign(offsetHours);
 
-    const year = parseInt(match[1], 10);
-    const month = parseInt(match[2], 10);
-    const day = parseInt(match[3], 10);
-    const hours = parseInt(match[4], 10) - offsetHours;
-    const minutes = parseInt(match[5], 10) - offsetMinutes;
-    const seconds = parseFloat(match[6].replace(",", "."));
+    const year = parseInt(notNull(match[1]), 10);
+    const month = parseInt(notNull(match[2]), 10);
+    const day = parseInt(notNull(match[3]), 10);
+    const hours = parseInt(notNull(match[4]), 10) - offsetHours;
+    const minutes = parseInt(notNull(match[5]), 10) - offsetMinutes;
+    const seconds = parseFloat(notNull(match[6]).replace(",", "."));
 
     return timestamp({year, month, day, hours, minutes, seconds});
 }
