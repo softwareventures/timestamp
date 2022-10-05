@@ -539,22 +539,32 @@
     dictionary-types "^1.2.0"
     tslib "^1.9.3 || ^2.0.0"
 
-"@softwareventures/date@^1.4.2":
-  version "1.5.1"
-  resolved "https://registry.yarnpkg.com/@softwareventures/date/-/date-1.5.1.tgz#8d0971f9b86e25412aa0e9c3e0f3f93ac13f4052"
-  integrity sha512-1H2ofTrYloQadM0ZumYTGfeV7rP1phQXj3BvkT5VsX9Z2c4b4s47jRYlfFQKxbcEEJWKNaNH0aw1Mck6KnudAw==
+"@softwareventures/array@^3.10.0 || ^4.0.0 || ^5.0.0":
+  version "5.2.0"
+  resolved "https://registry.yarnpkg.com/@softwareventures/array/-/array-5.2.0.tgz#235a8427378b84f18031a09ede0142d6ec6a8e67"
+  integrity sha512-vVleJME+wOObPdbgYLYwiVN3VV48gzA6I86fOzpNwjk1rFtVtEttVO9lUcGUrXoNaFwYNM+I9VfLaLqaiKdbxA==
   dependencies:
-    "@softwareventures/ordered" "^0.2.1"
-    "@types/is-integer" "1.0.0"
-    is-integer "1.0.7"
-    is-integer-in-range "^1.0.0 || ^2.0.0"
-    tslib "^1.9.3 || ^2.0.0"
+    "@softwareventures/nullable" "^1.0.0 || ^1.0.0 || ^1.2.1 || ^2.0.0"
+    "@softwareventures/ordered" "^0.2.0 || ^1.0.0"
+    tslib "^2.0.0"
 
 "@softwareventures/date@^1.4.2 || ^2.0.0":
   version "2.0.3"
   resolved "https://registry.yarnpkg.com/@softwareventures/date/-/date-2.0.3.tgz#d3d2b3e0cd7370eb6476a45e769f70bfdb9e69ea"
   integrity sha512-53ak/QmNnDdf8YudJDvaqQLls0qOCxOcvNEZh0Tuk9gj+vb4JyH9fWBtB83JGYwce6Agnn2BopRqztV6o+B9bA==
   dependencies:
+    "@softwareventures/ordered" "^0.2.1 || ^1.0.0"
+    "@types/is-integer" "1.0.0"
+    is-integer "1.0.7"
+    is-integer-in-range "^1.0.0 || ^2.0.0 || ^3.0.0"
+    tslib "^1.9.3 || ^2.0.0 || ^2.1.0"
+
+"@softwareventures/date@^1.4.2 || ^2.0.0 || ^3.0.0":
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/@softwareventures/date/-/date-3.0.0.tgz#7eb49938c07f89115f5a891177cf7a407af22828"
+  integrity sha512-Zd4T2wXOYGZo4fml237D/id3VMM0lUA6PQJDq2Vn05FeIMIg2Mt3rcgOqZ6kr1i/jiCOJSTAB6rTX/p5a+185g==
+  dependencies:
+    "@softwareventures/format-date" "^1.0.0"
     "@softwareventures/ordered" "^0.2.1 || ^1.0.0"
     "@types/is-integer" "1.0.0"
     is-integer "1.0.7"
@@ -576,14 +586,15 @@
   dependencies:
     tslib "^2.3.1"
 
-"@softwareventures/format-date@^1.0.0-alpha.1":
-  version "1.0.0-alpha.1"
-  resolved "https://registry.yarnpkg.com/@softwareventures/format-date/-/format-date-1.0.0-alpha.1.tgz#c2de76ed42af9945ca6316ce41c0ba917243aba1"
-  integrity sha512-pdfROwSd6upPbPlkrThMGGA3UUUQzA8z3XiHtbC4bcsez3TD5EL4IQ1nLg1iKfOVmvxcxnnP2IiEu2LAwYxIpA==
+"@softwareventures/format-date@^1.0.0", "@softwareventures/format-date@^1.0.0-alpha.1":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@softwareventures/format-date/-/format-date-1.0.0.tgz#2c82ad974d1503aa59bb98b43030f9ef8636af8e"
+  integrity sha512-G5T1e+qUZ8o1SXv/OJccOUlGVmpw6QFLMXXTx7ei5MxW4NuCChe7sK/Urg7Cjs67w3MwZsscXnzOc9vTXuQRPQ==
   dependencies:
-    "@softwareventures/array" "^3.10.0"
-    "@softwareventures/date" "^1.4.2"
-    tslib "2.2.0"
+    "@softwareventures/array" "^3.10.0 || ^4.0.0 || ^5.0.0"
+    "@softwareventures/date" "^1.4.2 || ^2.0.0 || ^3.0.0"
+    "@softwareventures/nullable" "^2.0.0"
+    tslib "2.4.0"
 
 "@softwareventures/format-timestamp@^1.0.0-alpha.1":
   version "1.0.0-alpha.1"
@@ -604,6 +615,13 @@
     "@softwareventures/ordered" "^0.2.2 || ^1.0.0"
     tslib "2.3.0"
 
+"@softwareventures/nullable@^1.0.0 || ^1.0.0 || ^1.2.1 || ^2.0.0", "@softwareventures/nullable@^1.0.0 || ^1.2.1 || ^2.0.0", "@softwareventures/nullable@^1.3.1 || ^2.0.0", "@softwareventures/nullable@^2.0.0":
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/@softwareventures/nullable/-/nullable-2.0.0.tgz#d11498c5fe71bb0b94ba85a40e774c19c721c5d3"
+  integrity sha512-zx+FMgB4MqmqIiCglgP8GZIYPw57yFBuz/jh0kXNAoEtSRl3LkwhaGG0b/y5yae2RsYSaVkNotQaSmJRt5GahA==
+  dependencies:
+    tslib "2.3.0"
+
 "@softwareventures/nullable@^1.0.0 || ^1.2.1":
   version "1.4.0"
   resolved "https://registry.yarnpkg.com/@softwareventures/nullable/-/nullable-1.4.0.tgz#00d51ae9082ce3f338e394e8263a72a12ae3acfa"
@@ -611,21 +629,14 @@
   dependencies:
     tslib "2.2.0"
 
-"@softwareventures/nullable@^1.0.0 || ^1.2.1 || ^2.0.0", "@softwareventures/nullable@^1.3.1 || ^2.0.0":
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/@softwareventures/nullable/-/nullable-2.0.0.tgz#d11498c5fe71bb0b94ba85a40e774c19c721c5d3"
-  integrity sha512-zx+FMgB4MqmqIiCglgP8GZIYPw57yFBuz/jh0kXNAoEtSRl3LkwhaGG0b/y5yae2RsYSaVkNotQaSmJRt5GahA==
-  dependencies:
-    tslib "2.3.0"
-
-"@softwareventures/ordered@^0.2.0", "@softwareventures/ordered@^0.2.1":
+"@softwareventures/ordered@^0.2.0":
   version "0.2.4"
   resolved "https://registry.yarnpkg.com/@softwareventures/ordered/-/ordered-0.2.4.tgz#f2ac71ea6db811ba0da249f1cee67ed204382b0d"
   integrity sha512-hbR74lJsfF9g7m6aQKJC7jBofwvT71laRXvTLXnNo+MbtQXyu7t40vRmPssv6ebaG0r2kuw5sYPyr/hknqNWRg==
   dependencies:
     tslib "^1.9.3 || ^2.0.0 || ^2.1.0"
 
-"@softwareventures/ordered@^0.2.1 || ^1.0.0", "@softwareventures/ordered@^0.2.2 || ^1.0.0", "@softwareventures/ordered@^1.0.0":
+"@softwareventures/ordered@^0.2.0 || ^1.0.0", "@softwareventures/ordered@^0.2.1 || ^1.0.0", "@softwareventures/ordered@^0.2.2 || ^1.0.0", "@softwareventures/ordered@^1.0.0":
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/@softwareventures/ordered/-/ordered-1.0.0.tgz#d803eef43bb0b4ccfcd78d2928fe38b5109ad99e"
   integrity sha512-SUFUYDWEPAS54LpGH+mRHwkGuTINPDt4OOS3h/Zr9f12JPFz2cqh6Xxwg75BZqwaeONuUwmklJVMRmgvxSSkPA==
@@ -2929,15 +2940,6 @@ is-glob@^4.0.0, is-glob@^4.0.1, is-glob@^4.0.3, is-glob@~4.0.1:
   dependencies:
     is-extglob "^2.1.1"
 
-"is-integer-in-range@^1.0.0 || ^2.0.0":
-  version "2.0.1"
-  resolved "https://registry.yarnpkg.com/is-integer-in-range/-/is-integer-in-range-2.0.1.tgz#7dcfc70c744635daf070903ef05915903afc37cb"
-  integrity sha512-rP+q9JXUsM52UMBOF8XIIAZ/mm//JDgsU97ef3df37bC9IriULbiSHCSbROdjs908xxoaI8HZgIvq0puYO2n6g==
-  dependencies:
-    "@types/is-integer" "^1.0.0"
-    is-integer "^1.0.7"
-    tslib "2.3.0"
-
 "is-integer-in-range@^1.0.0 || ^2.0.0 || ^3.0.0", is-integer-in-range@^3.0.1:
   version "3.0.1"
   resolved "https://registry.yarnpkg.com/is-integer-in-range/-/is-integer-in-range-3.0.1.tgz#3572cff0d316a9c56478c249619a635721883fc8"
@@ -5237,7 +5239,7 @@ tslib@2.3.1:
   resolved "https://registry.yarnpkg.com/tslib/-/tslib-2.3.1.tgz#e8a335add5ceae51aa261d32a490158ef042ef01"
   integrity sha512-77EbyPPpMz+FRFRuAFlWMtmgUWGe9UOG2Z25NqCwiIjRhOf5iKGuzSe5P2w1laq+FkRy4p+PCuVkJSGkzTEKVw==
 
-tslib@2.4.0, "tslib@^1.9.3 || ^2.0.0", "tslib@^1.9.3 || ^2.0.0 || ^2.1.0", tslib@^2.1.0, tslib@^2.3.1:
+tslib@2.4.0, "tslib@^1.9.3 || ^2.0.0", "tslib@^1.9.3 || ^2.0.0 || ^2.1.0", tslib@^2.0.0, tslib@^2.1.0, tslib@^2.3.1:
   version "2.4.0"
   resolved "https://registry.yarnpkg.com/tslib/-/tslib-2.4.0.tgz#7cecaa7f073ce680a05847aa77be941098f36dc3"
   integrity sha512-d6xOpEDfsi2CZVlPQzGeux8XMwLT9hssAsaPYExaQMuYskwb+x1x7J371tWlbBdWHroy99KnVB6qIkUbs5X3UQ==
