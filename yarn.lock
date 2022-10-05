@@ -597,6 +597,16 @@
     "@softwareventures/nullable" "^2.0.0"
     tslib "2.4.0"
 
+"@softwareventures/format-timestamp@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@softwareventures/format-timestamp/-/format-timestamp-1.0.0.tgz#65d5726d2f6d57e412ad93fb7f8b947198e15495"
+  integrity sha512-fHIkVnYSdVZa4rlnKoZzKIBHhzml8KJJEyrVg0/kRkMVgK2HFYu3z8NkInD8GsOV2dzjOgWQ52oM6O6XZN9mPg==
+  dependencies:
+    "@softwareventures/array" "^3.10.0 || ^4.0.0 || ^5.0.0"
+    "@softwareventures/format-date" "^1.0.0"
+    "@softwareventures/timestamp" "^1.0.0"
+    tslib "2.4.0"
+
 "@softwareventures/format-timestamp@^1.0.0-alpha.1":
   version "1.0.0-alpha.1"
   resolved "https://registry.yarnpkg.com/@softwareventures/format-timestamp/-/format-timestamp-1.0.0-alpha.1.tgz#1878643923e7d73d95fe4969d888bce976b2f450"
@@ -669,6 +679,20 @@
     is-integer "^1.0.7"
     is-integer-in-range "^3.0.1"
     tslib "^1.9.3 || ^2.0.0 || ^2.1.0"
+    unknown "^0.2.5"
+
+"@softwareventures/timestamp@^1.0.0":
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/@softwareventures/timestamp/-/timestamp-1.0.1.tgz#70cc64b719cca3edb66627abdc2f27e6a187fcca"
+  integrity sha512-kPOoS8zWo8kgDDA4C6hZsC9nvcZ4CX3VmjrYJpWFMtri79ZPvf6YciMZQ4Y712ElpjvpM253rXduQnyL3RquRg==
+  dependencies:
+    "@softwareventures/date" "^1.4.2 || ^2.0.0 || ^3.0.0"
+    "@softwareventures/format-timestamp" "^1.0.0-alpha.1"
+    "@softwareventures/iterable" "^1.1.2 || ^2.0.0"
+    "@softwareventures/nullable" "^1.3.1 || ^2.0.0"
+    "@softwareventures/ordered" "^0.2.2 || ^1.0.0"
+    "@softwareventures/time" "^1.0.0"
+    tslib "2.4.0"
     unknown "^0.2.5"
 
 "@softwareventures/timestamp@^1.0.0-alpha.4":
@@ -3950,7 +3974,6 @@ npm@^8.3.0:
     "@npmcli/fs" "^2.1.0"
     "@npmcli/map-workspaces" "^2.0.3"
     "@npmcli/package-json" "^2.0.0"
-    "@npmcli/promise-spawn" "^3.0.0"
     "@npmcli/run-script" "^4.2.1"
     abbrev "~1.1.1"
     archy "~1.0.0"
@@ -3961,7 +3984,6 @@ npm@^8.3.0:
     cli-table3 "^0.6.2"
     columnify "^1.6.0"
     fastest-levenshtein "^1.0.12"
-    fs-minipass "^2.1.0"
     glob "^8.0.1"
     graceful-fs "^4.2.10"
     hosted-git-info "^5.1.0"
@@ -3981,7 +4003,6 @@ npm@^8.3.0:
     libnpmteam "^4.0.4"
     libnpmversion "^3.0.7"
     make-fetch-happen "^10.2.0"
-    minimatch "^5.1.0"
     minipass "^3.1.6"
     minipass-pipeline "^1.2.4"
     mkdirp "^1.0.4"
