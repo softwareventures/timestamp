@@ -28,7 +28,7 @@
   "dependencies": {
     "@softwareventures/date": "^1.4.2 || ^2.0.0 || ^3.0.0",
     "@softwareventures/format-timestamp": "^1.0.0",
-    "@softwareventures/iterable": "^1.1.2 || ^2.0.0",
+    "@softwareventures/iterable": "^1.1.2 || ^2.0.0 || ^3.0.0",
     "@softwareventures/nullable": "^1.3.1 || ^2.0.0 || ^3.0.0",
     "@softwareventures/ordered": "^0.2.2 || ^1.0.0 || ^2.0.0",
     "@softwareventures/time": "^1.0.0",
