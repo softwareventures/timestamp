@@ -611,7 +611,7 @@
   dependencies:
     tslib "^1.9.3 || ^2.0.0 || ^2.1.0"
 
-"@softwareventures/ordered@^0.2.2 || ^1.0.0 || ^2.0.0":
+"@softwareventures/ordered@^0.2.2 || ^1.0.0 || ^2.0.0", "@softwareventures/ordered@^1.0.0 || ^2.0.0":
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/@softwareventures/ordered/-/ordered-2.0.0.tgz#feaee7148f6a447f96adaa169d27fd4962b4e3d4"
   integrity sha512-NSNuBWZ8yoNwN3tBD24E+rCHktLdJFnkrVoVy0S5C6OsKZ55viy9+IsMyMnHju2mPoB/iCmzQOPgFj/eu9WpQA==
@@ -639,6 +639,18 @@
   integrity sha512-914SUFpVoTP3ODxkajpCbNiw3zE30GqjmMZe9RpvpwRIixKp8F/r8BD/vejTLQJKOsffBt8RuOkPN1+Xv+QBmQ==
   dependencies:
     "@softwareventures/ordered" "^1.0.0"
+    "@types/is-integer" "1.0.0"
+    is-integer "^1.0.7"
+    is-integer-in-range "^3.0.1"
+    tslib "^1.9.3 || ^2.0.0 || ^2.1.0"
+    unknown "^0.2.5"
+
+"@softwareventures/time@^1.0.0 || ^2.0.0":
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/@softwareventures/time/-/time-2.0.1.tgz#3e34390ef23c165e9100b52893cee0b86db99745"
+  integrity sha512-X0H2c5FSBQBp4nGiLmn2kmJerxP8Tu3I3buPEeDDUA4Y9j6MCuc54PudH1hRK9VRwwcdsRCwfOhQFARACjbNwA==
+  dependencies:
+    "@softwareventures/ordered" "^1.0.0 || ^2.0.0"
     "@types/is-integer" "1.0.0"
     is-integer "^1.0.7"
     is-integer-in-range "^3.0.1"
