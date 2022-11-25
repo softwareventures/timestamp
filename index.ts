@@ -102,6 +102,17 @@ export function timestamp(options: TimestampOptions): Timestamp {
     return fromReferenceSeconds(toReferenceSeconds(options));
 }
 
+export function fromJsDate(date: JsDate): Timestamp {
+    return timestamp({
+        year: date.getUTCFullYear(),
+        month: date.getUTCMonth() + 1,
+        day: date.getUTCDate(),
+        hours: date.getUTCHours(),
+        minutes: date.getUTCMinutes(),
+        seconds: date.getUTCSeconds() + date.getUTCMilliseconds() / 1000
+    });
+}
+
 /** Creates a Timestamp with the specified options.
  *
  * If any numeric components are unspecified, they default to zero.
@@ -248,15 +259,7 @@ export function latestFn(b: TimestampOptions): (a: TimestampOptions) => Timestam
 
 /** Creates a Timestamp of the current time and date. */
 export function now(): Timestamp {
-    const now = new JsDate();
-    return timestamp({
-        year: now.getUTCFullYear(),
-        month: now.getUTCMonth() + 1,
-        day: now.getUTCDate(),
-        hours: now.getUTCHours(),
-        minutes: now.getUTCMinutes(),
-        seconds: now.getUTCSeconds() + now.getUTCMilliseconds() / 1000
-    });
+    return fromJsDate(new JsDate());
 }
 
 /** Parses a Timestamp from text in ISO 8601 format.
