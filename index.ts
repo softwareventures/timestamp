@@ -275,7 +275,7 @@ export function now(): Timestamp {
  * `YYYYMMDDTHHMMSS.ssss+hhmm` ISO 8601 formats are accepted. */
 export function parseIso8601(text: string): Timestamp | null {
     const match =
-        /^([+-]?\d{4,})-?(\d{2})-?(\d{2})T(\d{2}):?(\d{2}):?(\d{2}(?:[.,]?\d+)?)(?:Z|([+-][0-9]{2}):?([0-9]{2}))$/u.exec(
+        /^([+-]?\d{4,})-?(\d{2})-?(\d{2})T(\d{2}):?(\d{2}):?(\d{2}(?:[.,]?\d+)?)(?:Z|([+-][0-9]{2}):?([0-9]{2}))$/iu.exec(
             text
         );
     if (match == null) {
