@@ -95,8 +95,6 @@ export function isTimestamp(value: unknown): value is Timestamp {
 
 /** Creates a {@link Timestamp} with the specified options.
  *
- * If any numeric components are unspecified, they default to zero.
- *
  * If any numeric components are outside the expected range, then
  * the resulting Timestamp will be normalized. */
 export function timestamp(options: TimestampOptions): Timestamp {
@@ -115,8 +113,6 @@ export function fromJsDate(date: JsDate): Timestamp {
 }
 
 /** Creates a {@link Timestamp} with the specified options.
- *
- * If any numeric components are unspecified, they default to zero.
  *
  * If any numeric components are outside the expected range, then
  * the resulting Timestamp will be normalized. */
