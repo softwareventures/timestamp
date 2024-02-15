@@ -37,6 +37,9 @@
     "unknown": "^0.2.5"
   },
   "devDependencies": {
+    "@commitlint/cli": "17.8.1",
+    "@commitlint/config-conventional": "17.8.1",
+    "@commitlint/cz-commitlint": "17.8.1",
     "@softwareventures/eslint-config": "7.3.0",
     "@softwareventures/precise-commits": "3.0.33",
     "@softwareventures/prettier-config": "4.0.0",
@@ -45,8 +48,7 @@
     "@typescript-eslint/eslint-plugin": "7.0.1",
     "@typescript-eslint/parser": "7.0.1",
     "ava": "6.1.1",
-    "conventional-changelog-conventionalcommits": "7.0.2",
-    "cz-conventional-changelog": "3.3.0",
+    "commitizen": "4.3.0",
     "eslint": "8.56.0",
     "eslint-config-prettier": "9.1.0",
     "eslint-plugin-import": "2.29.1",
@@ -66,7 +68,7 @@
   "prettier": "@softwareventures/prettier-config",
   "config": {
     "commitizen": {
-      "path": "./node_modules/cz-conventional-changelog"
+      "path": "./node_modules/@commitlint/cz-commitlint"
     }
   },
   "ava": {
