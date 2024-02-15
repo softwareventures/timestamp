@@ -17,7 +17,7 @@
   "scripts": {
     "fix": "tsc --noEmit && eslint . --fix && prettier --write .",
     "lint": "tsc --noEmit && eslint . && prettier --check .",
-    "prepare": "tsc",
+    "prepack": "tsc",
     "semantic-release": "semantic-release",
     "test": "ava"
   },
@@ -77,6 +77,7 @@
   "release": {
     "extends": "@softwareventures/semantic-release-config"
   },
+  "packageManager": "yarn@4.1.0",
   "publishConfig": {
     "access": "public"
   }
