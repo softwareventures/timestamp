@@ -26,7 +26,7 @@ export interface Timestamp {
      * npm.
      *
      * Negative values or zero represent years before the Common Era (BCE/BC).
-     * Zero represents 1 BCE, `-1` represents 2 BCE, `-2` represents BCE, and
+     * Zero represents 1 BCE, `-1` represents 2 BCE, `-2` represents 3 BCE, and
      * so on.
      *
      * Note that there is no year zero in the Gregorian Calendar. The year 1
