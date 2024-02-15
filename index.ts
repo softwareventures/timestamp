@@ -18,7 +18,7 @@ import {JsDate} from "./js-date";
  * Calendar, UTC. */
 export interface Timestamp {
     /** Type discriminator identifying the object as a `Timestamp`. */
-    readonly type: "timestamp";
+    readonly type: "Timestamp";
 
     /** The year.
      *
@@ -170,7 +170,7 @@ export function isValid(timestamp: TimestampOptions): boolean {
     const seconds = timestamp.seconds ?? 0;
 
     return (
-        (!hasProperty(timestamp, "type") || timestamp.type === "timestamp") &&
+        (!hasProperty(timestamp, "type") || timestamp.type === "Timestamp") &&
         isInteger(year) &&
         isIntegerInRange(month, JANUARY, DECEMBER) &&
         isIntegerInRange(day, 1, daysInMonth(month, year)) &&
@@ -297,7 +297,7 @@ export function fromReferenceSeconds(referenceSeconds: number): Timestamp {
     const {hours, minutes, seconds} = timeFromReferenceSeconds(
         referenceSeconds - referenceDays * 86400
     );
-    return {type: "timestamp", year, month, day, hours, minutes, seconds};
+    return {type: "Timestamp", year, month, day, hours, minutes, seconds};
 }
 
 /** Creates a {@link Timestamp} corresponding to the specified count of seconds
