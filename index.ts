@@ -1,3 +1,4 @@
+import * as date from "@softwareventures/date";
 import {fromReferenceDays, toReferenceDays} from "@softwareventures/date";
 import * as format from "@softwareventures/format-timestamp";
 import {
@@ -70,6 +71,42 @@ export interface Timestamp {
  * An instance of {@link Timestamp} may always be used in place of
  * `TimestampOptions`. */
 export type TimestampOptions = Partial<Timestamp>;
+
+/** The numeric representation of the month of January. */
+export const JANUARY = date.JANUARY; // eslint-disable-line @typescript-eslint/naming-convention
+
+/** The numeric representation of the month of February. */
+export const FEBRUARY = date.FEBRUARY; // eslint-disable-line @typescript-eslint/naming-convention
+
+/** The numeric representation of the month of March. */
+export const MARCH = date.MARCH; // eslint-disable-line @typescript-eslint/naming-convention
+
+/** The numeric representation of the month of April. */
+export const APRIL = date.APRIL; // eslint-disable-line @typescript-eslint/naming-convention
+
+/** The numeric representation of the month of May. */
+export const MAY = date.MAY; // eslint-disable-line @typescript-eslint/naming-convention
+
+/** The numeric representation of the month of June. */
+export const JUNE = date.JUNE; // eslint-disable-line @typescript-eslint/naming-convention
+
+/** The numeric representation of the month of July. */
+export const JULY = date.JULY; // eslint-disable-line @typescript-eslint/naming-convention
+
+/** The numeric representation of the month of August. */
+export const AUGUST = date.AUGUST; // eslint-disable-line @typescript-eslint/naming-convention
+
+/** The numeric representation of the month of September. */
+export const SEPTEMBER = date.SEPTEMBER; // eslint-disable-line @typescript-eslint/naming-convention
+
+/** The numeric representation of the month of October. */
+export const OCTOBER = date.OCTOBER; // eslint-disable-line @typescript-eslint/naming-convention
+
+/** The numeric representation of the month of November. */
+export const NOVEMBER = date.NOVEMBER; // eslint-disable-line @typescript-eslint/naming-convention
+
+/** The numeric representation of the month of December. */
+export const DECEMBER = date.DECEMBER; // eslint-disable-line @typescript-eslint/naming-convention
 
 /** Tests if the specified value is a `Timestamp`. */
 export function isTimestamp(value: unknown): value is Timestamp {
