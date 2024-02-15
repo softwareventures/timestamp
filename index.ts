@@ -108,7 +108,15 @@ export const NOVEMBER = date.NOVEMBER; // eslint-disable-line @typescript-eslint
 /** The numeric representation of the month of December. */
 export const DECEMBER = date.DECEMBER; // eslint-disable-line @typescript-eslint/naming-convention
 
-/** Tests if the specified value is a `Timestamp`. */
+/** Returns `true` if the specified value has the shape of a {@link Timestamp}
+ * object.
+ *
+ * The `year`, `month`, `day`, `hours`, and `minutes` fields may be
+ * non-integers or outside the valid range, meaning that the object may not
+ * represent a valid timestamp.
+ *
+ * The `seconds` field may be non-finite, meaning that the object may not
+ * represent a valid timestamp. */
 export function isTimestamp(value: unknown): value is Timestamp {
     return (
         typeof value === "object" &&
