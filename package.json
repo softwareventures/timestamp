@@ -25,7 +25,7 @@
   },
   "sideEffects": false,
   "engines": {
-    "node": "^14 || ^16 || >=18"
+    "node": "^18 || >=20"
   },
   "dependencies": {
     "@softwareventures/date": "^1.4.2 || ^2.0.0 || ^3.0.0 || ^4.0.0",
