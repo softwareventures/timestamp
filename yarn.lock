@@ -717,7 +717,7 @@
     tslib "^2.1.0"
     unknown "^0.2.5"
 
-"@softwareventures/time@^2.0.0 || ^3.0.0":
+"@softwareventures/time@^1.0.0 || ^2.0.0 || ^3.0.0", "@softwareventures/time@^2.0.0 || ^3.0.0":
   version "3.1.1"
   resolved "https://registry.yarnpkg.com/@softwareventures/time/-/time-3.1.1.tgz#38134c2ae4bd9b124aa7cae6800e92fbad3c57af"
   integrity sha512-ZMi4/upMM7HavvNeOzbROAS6yicNFsqqdRRth79AA2hR8RdSu0StTRM8y2FOyC2d9SPzzqS8B1f7JOSnvrJgRw==
