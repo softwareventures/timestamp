@@ -18,7 +18,6 @@
     "fix": "tsc --noEmit && eslint . --fix && prettier --write .",
     "lint": "tsc --noEmit && eslint . && prettier --check .",
     "prepack": "tsc",
-    "semantic-release": "semantic-release",
     "test": "ava"
   },
   "sideEffects": false,
