@@ -460,13 +460,14 @@ export function afterFn(b: TimestampOptions): (a: TimestampOptions) => boolean {
  * Curried variant of {@link timestampAfter}. */
 export const timestampAfterFn = afterFn;
 
-/** Tests if the {@link Timestamp} `a` is after or equal to the
- * {@link Timestamp} `b`. */
+/** Returns `true` if `a` refers to a timestamp after or the same as `b`. */
 export function afterOrEqual(a: TimestampOptions, b: TimestampOptions): boolean {
     return toReferenceSeconds(a) >= toReferenceSeconds(b);
 }
 
-/** Tests if the {@link Timestamp} `a` is after or equal to the {@link Timestamp} `b`. */
+/** Returns `true` if `a` refers to a timestamp after or the same as `b`.
+ *
+ * Curried variant of {@link afterOrEqual}. */
 export function afterOrEqualFn(b: TimestampOptions): (a: TimestampOptions) => boolean {
     return a => afterOrEqual(a, b);
 }
