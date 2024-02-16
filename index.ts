@@ -614,3 +614,12 @@ export const parseTimestampIso8601 = parseIso8601;
  *
  * For other formats, see @softwareventures/format-timestamp. */
 export const formatIso8601 = format.iso8601;
+
+/** Formats the specified {@link Timestamp} as IS0 8601 extended, rounded down
+ * to the next lower second e.g. `2021-05-01T11:57:23Z`.
+ *
+ * Alias of {@link formatIso8601}, useful for disambiguation from similar
+ * functions that operate on other date/time types.
+ *
+ * For other formats, see @softwareventures/format-timestamp. */
+export const formatTimestampIso8601 = format.iso8601;
