@@ -521,6 +521,14 @@ export function latest<T extends TimestampOptions>(timestamps: Iterable<T>): Tim
     return mapNullable(maximum(map(timestamps, toReferenceSeconds)), fromReferenceSeconds);
 }
 
+/** Compares a list of {@link Timestamp}s and returns the latest in the list.
+ *
+ * Returns `null` if the list is empty.
+ *
+ * Alias of {@link latest}, useful for disambiguation from similar functions
+ * that operate on other date/time types. */
+export const latestTimestamp = latest;
+
 /** Returns the latest of the specified {@link Timestamp}s. */
 export function latestFn(b: TimestampOptions): (a: TimestampOptions) => Timestamp {
     const bs = toReferenceSeconds(b);
@@ -529,6 +537,11 @@ export function latestFn(b: TimestampOptions): (a: TimestampOptions) => Timestam
         return bs > as ? fromReferenceSeconds(bs) : fromReferenceSeconds(as);
     };
 }
+
+/** Compares two {@link Timestamp}s and returns the later of the two.
+ *
+ * Curried variant of {@link latestTimestamp}. */
+export const latestTimestampFn = latestFn;
 
 /** Creates a {@link Timestamp} of the current time and date. */
 export function now(): Timestamp {
