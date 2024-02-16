@@ -442,12 +442,23 @@ export function after(a: TimestampOptions, b: TimestampOptions): boolean {
     return toReferenceSeconds(a) > toReferenceSeconds(b);
 }
 
+/** Returns `true` if `a` refers to a timestamp after `b`.
+ *
+ * Alias of {@link after}, useful for disambiguation from similar functions
+ * that operate on other date/time types. */
+export const timestampAfter = after;
+
 /** Returns `true` if `a` refers to a date and time after `b`.
  *
  * Curried variant of {@link after}. */
 export function afterFn(b: TimestampOptions): (a: TimestampOptions) => boolean {
     return a => after(a, b);
 }
+
+/** Returns `true` if `a` refers to a timestamp after `b`.
+ *
+ * Curried variant of {@link timestampAfter}. */
+export const timestampAfterFn = afterFn;
 
 /** Tests if the {@link Timestamp} `a` is after or equal to the
  * {@link Timestamp} `b`. */
