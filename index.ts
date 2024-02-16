@@ -300,6 +300,14 @@ export function fromReferenceSeconds(referenceSeconds: number): Timestamp {
     return {type: "timestamp", year, month, day, hours, minutes, seconds};
 }
 
+/** Creates a {@link Timestamp} corresponding to the specified count of seconds
+ * since the reference Timestamp of midnight on the morning of 1st January,
+ * 1 CE.
+ *
+ * Alias of {@link fromReferenceSeconds}, useful for disambiguation from
+ * similar functions that operate on other types. */
+export const timestampFromReferenceSeconds = fromReferenceSeconds;
+
 /** Tests if two {@link Timestamp}s are equal. */
 export function equal(a: TimestampOptions, b: TimestampOptions): boolean {
     return toReferenceSeconds(a) === toReferenceSeconds(b);
