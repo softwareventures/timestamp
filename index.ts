@@ -337,10 +337,21 @@ export function notEqual(a: TimestampOptions, b: TimestampOptions): boolean {
 
 /** Returns `true` if `a` and `b` refer to a different timestamp.
  *
+ * Alias of {@link notEqual}, for disambiguation from other inequality
+ * functions. */
+export const timestampsNotEqual = notEqual;
+
+/** Returns `true` if `a` and `b` refer to a different timestamp.
+ *
  * Curried variant of {@link notEqual}. */
 export function notEqualFn(b: TimestampOptions): (a: TimestampOptions) => boolean {
     return a => notEqual(a, b);
 }
+
+/** Returns `true` if `a` and `b` refer to a different timestamp.
+ *
+ * Curried variant of {@link timestampsNotEqual}. */
+export const timestampsNotEqualFn = notEqualFn;
 
 /** Compares two {@link Timestamp}s. */
 export const compare: Comparator<TimestampOptions> = (a, b) => {
