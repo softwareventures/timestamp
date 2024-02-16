@@ -548,6 +548,12 @@ export function now(): Timestamp {
     return fromJsDate(new JsDate());
 }
 
+/** Creates a {@link Timestamp} of the current time and date.
+ *
+ * Alias of {@link now}, useful for disambiguation from similar functions that
+ * operate on other date/time types. */
+export const timestampNow = now;
+
 /** Parses a {@link Timestamp} from text in ISO 8601 format.
  *
  * The ISO 8601 text must specify a time zone offset, which should usually be
