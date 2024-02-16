@@ -194,6 +194,33 @@ export function isValid(timestamp: TimestampOptions): boolean {
  * {@link Timestamp}s returned by functions in this library are always valid. */
 export const isTimestampValid = isValid;
 
+/** Asserts that the specified {@link Timestamp} object represents a valid
+ * timestamp.
+ *
+ * {@link Timestamp}s returned by functions in this library are always valid.
+ *
+ * @throws {Error} if any of the `year`, `month`, `day`, `hours`, or `minutes`
+ * fields are non-integers or outside the valid range, or if the `seconds`
+ * field is non-finite or outside the valid range. */
+export function validate(timestamp: TimestampOptions): void {
+    if (!isValid(timestamp)) {
+        throw new Error("Invalid timestamp");
+    }
+}
+
+/** Asserts that the specified {@link Timestamp} object represents a valid
+ * timestamp.
+ *
+ * {@link Timestamp}s returned by functions in this library are always valid.
+ *
+ * Alias of {@link validate}, useful for disambiguation from similar functions
+ * that operate on other types.
+ *
+ * @throws {Error} if any of the `year`, `month`, `day`, `hours`, or `minutes`
+ * fields are non-integers or outside the valid range, or if the `seconds`
+ * field is non-finite or outside the valid range. */
+export const validateTimestamp = validate;
+
 /** Creates a {@link Timestamp} with the specified options.
  *
  * If any numeric components are outside the expected range, then
