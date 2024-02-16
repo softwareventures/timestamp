@@ -1,5 +1,5 @@
 import * as date from "@softwareventures/date";
-import {fromReferenceDays, toReferenceDays} from "@softwareventures/date";
+import {daysInMonth, fromReferenceDays, toReferenceDays} from "@softwareventures/date";
 import * as format from "@softwareventures/format-timestamp";
 import {
     fromReferenceSeconds as timeFromReferenceSeconds,
@@ -11,6 +11,8 @@ import {map, maximum, minimum} from "@softwareventures/iterable";
 import {map as mapNullable, notNull} from "@softwareventures/nullable";
 import {hasProperty} from "unknown";
 import {JsDate} from "./js-date";
+import isInteger = require("is-integer");
+import isIntegerInRange from "is-integer-in-range";
 
 /** An instant in time, represented as a date and time in the Gregorian
  * Calendar, UTC. */
@@ -135,6 +137,34 @@ export function isTimestamp(value: unknown): value is Timestamp {
         typeof value.minutes === "number" &&
         hasProperty(value, "seconds") &&
         typeof value.seconds === "number"
+    );
+}
+
+/** Tests if the specified {@link Timestamp} object represents a valid
+ * timestamp.
+ *
+ * Returns `true` if the `year`, `month`, `day`, `hour`, and `minute` fields
+ * are all integers inside the valid range, and the `seconds` field is a finite
+ * number inside the valid range.
+ *
+ * {@link Timestamp}s returned by functions in this library are always valid. */
+export function isValid(timestamp: TimestampOptions): boolean {
+    const year = timestamp.year ?? 1;
+    const month = timestamp.month ?? 1;
+    const day = timestamp.day ?? 1;
+    const hours = timestamp.hours ?? 0;
+    const minutes = timestamp.minutes ?? 0;
+    const seconds = timestamp.seconds ?? 0;
+
+    return (
+        (!hasProperty(timestamp, "type") || timestamp.type === "timestamp") &&
+        isInteger(year) &&
+        isIntegerInRange(month, JANUARY, DECEMBER) &&
+        isIntegerInRange(day, 1, daysInMonth(month, year)) &&
+        isIntegerInRange(hours, 0, 23) &&
+        isIntegerInRange(minutes, 0, 59) &&
+        seconds >= 0 &&
+        seconds < 60
     );
 }
 
