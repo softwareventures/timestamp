@@ -181,6 +181,19 @@ export function isValid(timestamp: TimestampOptions): boolean {
     );
 }
 
+/** Tests if the specified {@link Timestamp} object represents a valid
+ * timestamp.
+ *
+ * Returns `true` if the `year`, `month`, `day`, `hour`, and `minute` fields
+ * are all integers inside the valid range, and the `seconds` field is a finite
+ * number inside the valid range.
+ *
+ * Alias of {@link isValid}, useful for disambiguation from similar functions
+ * that operate on other types.
+ *
+ * {@link Timestamp}s returned by functions in this library are always valid. */
+export const isTimestampValid = isValid;
+
 /** Creates a {@link Timestamp} with the specified options.
  *
  * If any numeric components are outside the expected range, then
