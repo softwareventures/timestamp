@@ -7,8 +7,7 @@ import {
 } from "@softwareventures/time";
 import type {Comparator} from "@softwareventures/ordered";
 import {Comparison} from "@softwareventures/ordered";
-import {map, maximum} from "@softwareventures/iterable";
-import {map as mapNullable, notNull} from "@softwareventures/nullable";
+import {notNull} from "@softwareventures/nullable";
 import {hasProperty} from "unknown";
 import isInteger = require("is-integer");
 import isIntegerInRange from "is-integer-in-range";
@@ -533,25 +532,23 @@ export function earliestFn(b: TimestampOptions): (a: TimestampOptions) => Timest
  *   are non-finite. */
 export const earliestTimestampFn = earliestFn;
 
-/** Compares a list of {@link Timestamp}s and returns the latest in the list.
+/** Compares two {@link Timestamp}s and returns the later of the two.
  *
- * Returns `null` if the list is empty.
- *
- * @throws {Error} if any of the fields of any of the timestamps are
- *   non-finite. */
-export function latest<T extends TimestampOptions>(timestamps: Iterable<T>): Timestamp | null {
-    return mapNullable(maximum(map(timestamps, toReferenceSeconds)), fromReferenceSeconds);
+ * @throws {Error} if both specified `Timestamp`s contain numeric fields that
+ *   are non-finite. */
+export function latest(a: TimestampOptions, b: TimestampOptions): Timestamp {
+    const as = toReferenceSeconds(a);
+    const bs = toReferenceSeconds(b);
+    return fromReferenceSeconds(as > bs ? as : bs);
 }
 
-/** Compares a list of {@link Timestamp}s and returns the latest in the list.
- *
- * Returns `null` if the list is empty.
+/** Compares two {@link Timestamp}s and returns the later of the two.
  *
  * Alias of {@link latest}, useful for disambiguation from similar functions
  * that operate on other date/time types.
  *
- * @throws {Error} if any of the fields of any of the timestamps are
- *   non-finite. */
+ * @throws {Error} if both specified `Timestamp`s contain numeric fields that
+ *   are non-finite. */
 export const latestTimestamp = latest;
 
 /** Returns the latest of the specified {@link Timestamp}s.
@@ -559,11 +556,7 @@ export const latestTimestamp = latest;
  * @throws {Error} if both specified `Timestamp`s contain numeric fields that
  *   are non-finite. */
 export function latestFn(b: TimestampOptions): (a: TimestampOptions) => Timestamp {
-    const bs = toReferenceSeconds(b);
-    return a => {
-        const as = toReferenceSeconds(a);
-        return bs > as ? fromReferenceSeconds(bs) : fromReferenceSeconds(as);
-    };
+    return a => latest(a, b);
 }
 
 /** Compares two {@link Timestamp}s and returns the later of the two.
