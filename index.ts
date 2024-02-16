@@ -281,6 +281,13 @@ export function toReferenceSeconds(timestamp: TimestampOptions): number {
     );
 }
 
+/** Converts the specified {@link Timestamp} to a count of seconds since
+ * the reference timestamp of midnight on the morning of 1st January, 1 CE.
+ *
+ * Alias of {@link toReferenceSeconds}, useful for disambiguation from similar
+ * functions that operate on other types. */
+export const timestampToReferenceSeconds = toReferenceSeconds;
+
 /** Creates a {@link Timestamp} corresponding to the specified count of seconds
  * since the reference Timestamp of midnight on the morning of 1st January,
  * 1 CE. */
