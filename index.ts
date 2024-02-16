@@ -7,7 +7,7 @@ import {
 } from "@softwareventures/time";
 import type {Comparator} from "@softwareventures/ordered";
 import {Comparison} from "@softwareventures/ordered";
-import {map, maximum, minimum} from "@softwareventures/iterable";
+import {map, maximum} from "@softwareventures/iterable";
 import {map as mapNullable, notNull} from "@softwareventures/nullable";
 import {hasProperty} from "unknown";
 import isInteger = require("is-integer");
@@ -496,25 +496,23 @@ export function afterOrEqualFn(b: TimestampOptions): (a: TimestampOptions) => bo
  * Curried variant of {@link timestampAfterOrEqual}. */
 export const timestampAfterOrEqualFn = afterOrEqualFn;
 
-/** Compares a list of {@link Timestamp}s and returns the earliest in the list.
+/** Compares two {@link Timestamp}s and returns the earlier of the two.
  *
- * Returns `null` if the list is empty.
- *
- * @throws {Error} if any of the numeric fields of any of the timestamps are
- *   non-finite. */
-export function earliest<T extends TimestampOptions>(timestamps: Iterable<T>): Timestamp | null {
-    return mapNullable(minimum(map(timestamps, toReferenceSeconds)), fromReferenceSeconds);
+ * @throws {Error} if both specified `Timestamp`s contain numeric fields that
+ *   are non-finite. */
+export function earliest(a: TimestampOptions, b: TimestampOptions): Timestamp {
+    const as = toReferenceSeconds(a);
+    const bs = toReferenceSeconds(b);
+    return fromReferenceSeconds(as < bs ? as : bs);
 }
 
-/** Compares a list of {@link Timestamp}s and returns the earliest in the list.
- *
- * Returns `null` if the list is empty.
+/** Compares two {@link Timestamp}s and returns the earlier of the two.
  *
  * Alias of {@link earliest}, useful for disambiguation from similar functions
  * that operate on other date/time types.
  *
- * @throws {Error} if any of the numeric fields of any of the timestamps are
- *   non-finite. */
+ * @throws {Error} if both specified `Timestamp`s contain numeric fields that
+ *   are non-finite. */
 export const earliestTimestamp = earliest;
 
 /** Compares two {@link Timestamp}s and returns the earlier of the two.
@@ -524,11 +522,7 @@ export const earliestTimestamp = earliest;
  * @throws {Error} if both specified `Timestamp`s contain numeric fields that
  *   are non-finite. */
 export function earliestFn(b: TimestampOptions): (a: TimestampOptions) => Timestamp {
-    const bs = toReferenceSeconds(b);
-    return a => {
-        const as = toReferenceSeconds(a);
-        return bs < as ? fromReferenceSeconds(bs) : fromReferenceSeconds(as);
-    };
+    return a => earliest(a, b);
 }
 
 /** Compares two {@link Timestamp}s and returns the earlier of the two.
