@@ -225,7 +225,9 @@ export const validateTimestamp = validate;
  *
  * If the `month`, `day`, `hour`, `minute` or `seconds` fields are outside the
  * valid range, then they will roll over into the next minute, hours, day,
- * month or year. */
+ * month or year.
+ *
+ * @throws {Error} if any of the numeric fields are non-finite. */
 export function timestamp(options: TimestampOptions): Timestamp {
     return fromReferenceSeconds(toReferenceSeconds(options));
 }
@@ -250,7 +252,9 @@ export function fromJsDate(date: JsDate): Timestamp {
  *
  * Alias of {@link timestamp}. Calling the function by this name instead might
  * make code clearer in cases where the purpose is to normalize an existing
- * `Timestamp` object. */
+ * `Timestamp` object.
+ *
+ * @throws {Error} if any of the numeric fields are non-finite. */
 export const normalize = timestamp;
 
 /** Normalizes the specified {@link Timestamp} object so that it represents a
@@ -262,7 +266,9 @@ export const normalize = timestamp;
  *
  * Alias of {@link timestamp}. Calling the function by this name instead might
  * make code clearer in cases where the purpose is to normalize an existing
- * `Timestamp` object. */
+ * `Timestamp` object.
+ *
+ * @throws {Error} if any of the numeric fields are non-finite. */
 export const normalizeTimestamp = timestamp;
 
 /** Converts the specified {@link Timestamp} to a count of seconds since the
@@ -290,8 +296,13 @@ export const timestampToReferenceSeconds = toReferenceSeconds;
 
 /** Creates a {@link Timestamp} corresponding to the specified count of seconds
  * since the reference Timestamp of midnight on the morning of 1st January,
- * 1 CE. */
+ * 1 CE.
+ *
+ * @throws {Error} if `referenceSeconds` is non-finite. */
 export function fromReferenceSeconds(referenceSeconds: number): Timestamp {
+    if (!isFinite(referenceSeconds)) {
+        throw new Error("Invalid timestamp");
+    }
     const referenceDays = Math.floor(referenceSeconds / 86400);
     const {year, month, day} = fromReferenceDays(referenceDays);
     const {hours, minutes, seconds} = timeFromReferenceSeconds(
@@ -305,7 +316,9 @@ export function fromReferenceSeconds(referenceSeconds: number): Timestamp {
  * 1 CE.
  *
  * Alias of {@link fromReferenceSeconds}, useful for disambiguation from
- * similar functions that operate on other types. */
+ * similar functions that operate on other types.
+ *
+ * @throws {Error} if `referenceSeconds` is non-finite. */
 export const timestampFromReferenceSeconds = fromReferenceSeconds;
 
 /** Returns `true` if `a` and `b` refer to the same timestamp. */
@@ -485,7 +498,10 @@ export const timestampAfterOrEqualFn = afterOrEqualFn;
 
 /** Compares a list of {@link Timestamp}s and returns the earliest in the list.
  *
- * Returns `null` if the list is empty. */
+ * Returns `null` if the list is empty.
+ *
+ * @throws {Error} if any of the numeric fields of any of the timestamps are
+ *   non-finite. */
 export function earliest<T extends TimestampOptions>(timestamps: Iterable<T>): Timestamp | null {
     return mapNullable(minimum(map(timestamps, toReferenceSeconds)), fromReferenceSeconds);
 }
@@ -495,12 +511,18 @@ export function earliest<T extends TimestampOptions>(timestamps: Iterable<T>): T
  * Returns `null` if the list is empty.
  *
  * Alias of {@link earliest}, useful for disambiguation from similar functions
- * that operate on other date/time types. */
+ * that operate on other date/time types.
+ *
+ * @throws {Error} if any of the numeric fields of any of the timestamps are
+ *   non-finite. */
 export const earliestTimestamp = earliest;
 
 /** Compares two {@link Timestamp}s and returns the earlier of the two.
  *
- * Curried variant of {@link earliest}. */
+ * Curried variant of {@link earliest}.
+ *
+ * @throws {Error} if both specified `Timestamp`s contain numeric fields that
+ *   are non-finite. */
 export function earliestFn(b: TimestampOptions): (a: TimestampOptions) => Timestamp {
     const bs = toReferenceSeconds(b);
     return a => {
@@ -511,12 +533,18 @@ export function earliestFn(b: TimestampOptions): (a: TimestampOptions) => Timest
 
 /** Compares two {@link Timestamp}s and returns the earlier of the two.
  *
- * Curried variant of {@link earliestTimestamp}. */
+ * Curried variant of {@link earliestTimestamp}.
+ *
+ * @throws {Error} if both specified `Timestamp`s contain numeric fields that
+ *   are non-finite. */
 export const earliestTimestampFn = earliestFn;
 
 /** Compares a list of {@link Timestamp}s and returns the latest in the list.
  *
- * Returns `null` if the list is empty. */
+ * Returns `null` if the list is empty.
+ *
+ * @throws {Error} if any of the fields of any of the timestamps are
+ *   non-finite. */
 export function latest<T extends TimestampOptions>(timestamps: Iterable<T>): Timestamp | null {
     return mapNullable(maximum(map(timestamps, toReferenceSeconds)), fromReferenceSeconds);
 }
@@ -526,10 +554,16 @@ export function latest<T extends TimestampOptions>(timestamps: Iterable<T>): Tim
  * Returns `null` if the list is empty.
  *
  * Alias of {@link latest}, useful for disambiguation from similar functions
- * that operate on other date/time types. */
+ * that operate on other date/time types.
+ *
+ * @throws {Error} if any of the fields of any of the timestamps are
+ *   non-finite. */
 export const latestTimestamp = latest;
 
-/** Returns the latest of the specified {@link Timestamp}s. */
+/** Returns the latest of the specified {@link Timestamp}s.
+ *
+ * @throws {Error} if both specified `Timestamp`s contain numeric fields that
+ *   are non-finite. */
 export function latestFn(b: TimestampOptions): (a: TimestampOptions) => Timestamp {
     const bs = toReferenceSeconds(b);
     return a => {
@@ -540,7 +574,10 @@ export function latestFn(b: TimestampOptions): (a: TimestampOptions) => Timestam
 
 /** Compares two {@link Timestamp}s and returns the later of the two.
  *
- * Curried variant of {@link latestTimestamp}. */
+ * Curried variant of {@link latestTimestamp}.
+ *
+ * @throws {Error} if both specified `Timestamp`s contain numeric fields that
+ *   are non-finite. */
 export const latestTimestampFn = latestFn;
 
 /** Creates a {@link Timestamp} of the current time and date. */
