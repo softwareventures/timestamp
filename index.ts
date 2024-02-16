@@ -490,6 +490,14 @@ export function earliest<T extends TimestampOptions>(timestamps: Iterable<T>): T
     return mapNullable(minimum(map(timestamps, toReferenceSeconds)), fromReferenceSeconds);
 }
 
+/** Compares a list of {@link Timestamp}s and returns the earliest in the list.
+ *
+ * Returns `null` if the list is empty.
+ *
+ * Alias of {@link earliest}, useful for disambiguation from similar functions
+ * that operate on other date/time types. */
+export const earliestTimestamp = earliest;
+
 /** Compares two {@link Timestamp}s and returns the earlier of the two.
  *
  * Curried variant of {@link earliest}. */
@@ -500,6 +508,11 @@ export function earliestFn(b: TimestampOptions): (a: TimestampOptions) => Timest
         return bs < as ? fromReferenceSeconds(bs) : fromReferenceSeconds(as);
     };
 }
+
+/** Compares two {@link Timestamp}s and returns the earlier of the two.
+ *
+ * Curried variant of {@link earliestTimestamp}. */
+export const earliestTimestampFn = earliestFn;
 
 /** Returns the latest of the specified {@link Timestamp}s. */
 export function latest<T extends TimestampOptions>(timestamps: Iterable<T>): Timestamp | null {
