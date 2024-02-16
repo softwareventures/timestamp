@@ -10,9 +10,9 @@ import {Comparison} from "@softwareventures/ordered";
 import {map, maximum, minimum} from "@softwareventures/iterable";
 import {map as mapNullable, notNull} from "@softwareventures/nullable";
 import {hasProperty} from "unknown";
-import {JsDate} from "./js-date";
 import isInteger = require("is-integer");
 import isIntegerInRange from "is-integer-in-range";
+import {JsDate} from "./js-date";
 
 /** An instant in time, represented as a date and time in the Gregorian
  * Calendar, UTC. */
