@@ -414,14 +414,14 @@ export function beforeFn(b: TimestampOptions): (a: TimestampOptions) => boolean 
  * Curried variant of {@link timestampBefore}. */
 export const timestampBeforeFn = beforeFn;
 
-/** Tests if the {@link Timestamp} `a` is before or equal to the
- * {@link Timestamp} `b`. */
+/** Returns `true` if `a` refers to a timestamp before or the same as `b`. */
 export function beforeOrEqual(a: TimestampOptions, b: TimestampOptions): boolean {
     return toReferenceSeconds(a) <= toReferenceSeconds(b);
 }
 
-/** Tests if the {@link Timestamp} `a` is before or equal to the
- * {@link Timestamp} `b`. */
+/** Returns `true` if `a` refers to a timestamp before or the same as `b`.
+ *
+ * Curried variant of {@link beforeOrEqual}. */
 export function beforeOrEqualFn(b: TimestampOptions): (a: TimestampOptions) => boolean {
     return a => beforeOrEqual(a, b);
 }
