@@ -330,12 +330,14 @@ export function equalFn(b: TimestampOptions): (a: TimestampOptions) => boolean {
  * Curried variant of {@link timestampsEqual}. */
 export const timestampsEqualFn = equalFn;
 
-/** Tests if two {@link Timestamp}s are not equal. */
+/** Returns `true` if `a` and `b` refer to a different timestamp. */
 export function notEqual(a: TimestampOptions, b: TimestampOptions): boolean {
     return toReferenceSeconds(a) !== toReferenceSeconds(b);
 }
 
-/** Tests if two {@link Timestamp}s are not equal. */
+/** Returns `true` if `a` and `b` refer to a different timestamp.
+ *
+ * Curried variant of {@link notEqual}. */
 export function notEqualFn(b: TimestampOptions): (a: TimestampOptions) => boolean {
     return a => notEqual(a, b);
 }
