@@ -140,6 +140,19 @@ export function isTimestamp(value: unknown): value is Timestamp {
     );
 }
 
+/** Tests if the specified value is a {@link Timestamp} object representing a
+ * valid timestamp.
+ *
+ * Returns `true` if the value has the shape of a `Timestamp` object, the
+ * `year`, `month`, `day`, `hours` and `minutes` fields are all integers inside
+ * the valid range, and the `seconds` field is a finite number inside the valid
+ * range.
+ *
+ * {@link Timestamp}s returned by functions in this library are always valid. */
+export function isValidTimestamp(value: unknown): value is Timestamp {
+    return isTimestamp(value) && isValid(value);
+}
+
 /** Tests if the specified {@link Timestamp} object represents a valid
  * timestamp.
  *
