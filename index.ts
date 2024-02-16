@@ -373,10 +373,23 @@ export const compare: Comparator<TimestampOptions> = (a, b) => {
 /** Compares two {@link Timestamp}s and returns a {@link Comparison} specifying
  * if `a` is before, equal to, or after `b`.
  *
+ * Alias of {@link compare}, useful for disambiguation from other comparison
+ * functions. */
+export const compareTimestamps = compare;
+
+/** Compares two {@link Timestamp}s and returns a {@link Comparison} specifying
+ * if `a` is before, equal to, or after `b`.
+ *
  * Curried variant of {@link compare}. */
 export function compareFn(b: TimestampOptions): (a: TimestampOptions) => Comparison {
     return a => compare(a, b);
 }
+
+/** Compares two {@link Timestamp}s and returns a {@link Comparison} specifying
+ * if `a` is before, equal to, or after `b`.
+ *
+ * Curried variant of {@link compareTimestamps}. */
+export const compareTimestampsFn = compareFn;
 
 /** Tests if the {@link Timestamp} `a` is before the {@link Timestamp} `b`. */
 export function before(a: TimestampOptions, b: TimestampOptions): boolean {
