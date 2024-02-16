@@ -514,7 +514,9 @@ export function earliestFn(b: TimestampOptions): (a: TimestampOptions) => Timest
  * Curried variant of {@link earliestTimestamp}. */
 export const earliestTimestampFn = earliestFn;
 
-/** Returns the latest of the specified {@link Timestamp}s. */
+/** Compares a list of {@link Timestamp}s and returns the latest in the list.
+ *
+ * Returns `null` if the list is empty. */
 export function latest<T extends TimestampOptions>(timestamps: Iterable<T>): Timestamp | null {
     return mapNullable(maximum(map(timestamps, toReferenceSeconds)), fromReferenceSeconds);
 }
