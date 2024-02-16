@@ -437,12 +437,14 @@ export function beforeOrEqualFn(b: TimestampOptions): (a: TimestampOptions) => b
  * Curried variant of {@link timestampBeforeOrEqual}. */
 export const timestampBeforeOrEqualFn = beforeOrEqualFn;
 
-/** Tests if the {@link Timestamp} `a` is after the {@link Timestamp} `b`. */
+/** Returns `true` if `a` refers to a timestamp after `b`. */
 export function after(a: TimestampOptions, b: TimestampOptions): boolean {
     return toReferenceSeconds(a) > toReferenceSeconds(b);
 }
 
-/** Tests if the {@link Timestamp} `a` is after the {@link Timestamp} `b`. */
+/** Returns `true` if `a` refers to a date and time after `b`.
+ *
+ * Curried variant of {@link after}. */
 export function afterFn(b: TimestampOptions): (a: TimestampOptions) => boolean {
     return a => after(a, b);
 }
