@@ -104,7 +104,7 @@ export interface TimestampOptions {
      * instant in time with sub-second accuracy.
      *
      * @default 0 */
-    readonly seconds: number;
+    readonly seconds?: number;
 }
 
 /** The numeric representation of the month of January. */
