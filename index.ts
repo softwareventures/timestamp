@@ -308,12 +308,14 @@ export function fromReferenceSeconds(referenceSeconds: number): Timestamp {
  * similar functions that operate on other types. */
 export const timestampFromReferenceSeconds = fromReferenceSeconds;
 
-/** Tests if two {@link Timestamp}s are equal. */
+/** Returns `true` if `a` and `b` refer to the same timestamp. */
 export function equal(a: TimestampOptions, b: TimestampOptions): boolean {
     return toReferenceSeconds(a) === toReferenceSeconds(b);
 }
 
-/** Tests if two {@link Timestamp}s are equal. */
+/** Returns `true` if `a` and `b` refer to the same timestamp.
+ *
+ * Curried variant of {@link equal}. */
 export function equalFn(b: TimestampOptions): (a: TimestampOptions) => boolean {
     return a => equal(a, b);
 }
