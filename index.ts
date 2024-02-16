@@ -353,7 +353,8 @@ export function notEqualFn(b: TimestampOptions): (a: TimestampOptions) => boolea
  * Curried variant of {@link timestampsNotEqual}. */
 export const timestampsNotEqualFn = notEqualFn;
 
-/** Compares two {@link Timestamp}s. */
+/** Compares two {@link Timestamp}s and returns a {@link Comparison} specifying
+ * if `a` is before, equal to, or after `b`. */
 export const compare: Comparator<TimestampOptions> = (a, b) => {
     const as = toReferenceSeconds(a);
     const bs = toReferenceSeconds(b);
@@ -369,7 +370,10 @@ export const compare: Comparator<TimestampOptions> = (a, b) => {
     }
 };
 
-/** Compares two {@link Timestamp}s. */
+/** Compares two {@link Timestamp}s and returns a {@link Comparison} specifying
+ * if `a` is before, equal to, or after `b`.
+ *
+ * Curried variant of {@link compare}. */
 export function compareFn(b: TimestampOptions): (a: TimestampOptions) => Comparison {
     return a => compare(a, b);
 }
