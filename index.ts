@@ -253,6 +253,18 @@ export function fromJsDate(date: JsDate): Timestamp {
  * `Timestamp` object. */
 export const normalize = timestamp;
 
+/** Normalizes the specified {@link Timestamp} object so that it represents a
+ * valid timestamp.
+ *
+ * If the `month`, `day`, `hour`, `minute` or `seconds` fields are outside the
+ * valid range, then they will roll over into the next minute, hours, day,
+ * month or year.
+ *
+ * Alias of {@link timestamp}. Calling the function by this name instead might
+ * make code clearer in cases where the purpose is to normalize an existing
+ * `Timestamp` object. */
+export const normalizeTimestamp = timestamp;
+
 /** Converts the specified {@link Timestamp} to a count of seconds since the
  * reference Timestamp of midnight on the morning of 1st January, 1 CE. */
 export function toReferenceSeconds(timestamp: TimestampOptions): number {
