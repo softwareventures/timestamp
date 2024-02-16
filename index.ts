@@ -590,6 +590,25 @@ export function parseIso8601(text: string): Timestamp | null {
     return timestamp({year, month, day, hours, minutes, seconds});
 }
 
+/** Parses a {@link Timestamp} from text in ISO 8601 format.
+ *
+ * The ISO 8601 text must specify a time zone offset, which should usually be
+ * `Z` for UTC. If any other offset is specified then the date and time will
+ * be converted to and stored as UTC.
+ *
+ * If the specified text is not a valid ISO 8601 date-time then this function
+ * returns `null`.
+ *
+ * Both extended `YYYY-MM-DDTHH:MM:SS.ssss+hh:mm` and basic
+ * `YYYYMMDDTHHMMSS.ssss+hhmm` ISO 8601 formats are accepted.
+ *
+ * As an exception to ISO8601, the `"T"` delimiter between the date and time
+ * may be replaced by any sequence of whitespace characters.
+ *
+ * Alias of {@link parseIso8601}, useful for disambiguation from similar
+ * functions that operate on other date/time types.*/
+export const parseTimestampIso8601 = parseIso8601;
+
 /** Formats the specified {@link Timestamp} as IS0 8601 extended, rounded down
  * to the next lower second e.g. `2021-05-01T11:57:23Z`.
  *
