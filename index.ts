@@ -564,10 +564,13 @@ export const timestampNow = now;
  * returns `null`.
  *
  * Both extended `YYYY-MM-DDTHH:MM:SS.ssss+hh:mm` and basic
- * `YYYYMMDDTHHMMSS.ssss+hhmm` ISO 8601 formats are accepted. */
+ * `YYYYMMDDTHHMMSS.ssss+hhmm` ISO 8601 formats are accepted.
+ *
+ * As an exception to ISO8601, the `"T"` delimiter between the date and time
+ * may be replaced by any sequence of whitespace characters. */
 export function parseIso8601(text: string): Timestamp | null {
     const match =
-        /^([+-]?\d{4,})-?(\d{2})-?(\d{2})T(\d{2}):?(\d{2}):?(\d{2}(?:[.,]?\d+)?)(?:Z|([+-][0-9]{2}):?([0-9]{2}))$/iu.exec(
+        /^([+-]?\d{4,})-?(\d{2})-?(\d{2})(?:T|\s+)(\d{2}):?(\d{2}):?(\d{2}(?:[.,]?\d+)?)(?:Z|([+-][0-9]{2}):?([0-9]{2}))$/iu.exec(
             text
         );
     if (match == null) {
