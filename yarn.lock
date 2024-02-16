@@ -1213,6 +1213,7 @@ __metadata:
     "@typescript-eslint/parser": "npm:7.0.1"
     ava: "npm:6.1.1"
     commitizen: "npm:4.3.0"
+    conventional-changelog-conventionalcommits: "npm:7.0.2"
     eslint: "npm:8.56.0"
     eslint-config-prettier: "npm:9.1.0"
     eslint-plugin-import: "npm:2.29.1"
@@ -2504,7 +2505,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"conventional-changelog-conventionalcommits@npm:^7.0.2":
+"conventional-changelog-conventionalcommits@npm:7.0.2, conventional-changelog-conventionalcommits@npm:^7.0.2":
   version: 7.0.2
   resolution: "conventional-changelog-conventionalcommits@npm:7.0.2"
   dependencies:
