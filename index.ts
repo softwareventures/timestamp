@@ -483,12 +483,16 @@ export function afterOrEqualFn(b: TimestampOptions): (a: TimestampOptions) => bo
  * Curried variant of {@link timestampAfterOrEqual}. */
 export const timestampAfterOrEqualFn = afterOrEqualFn;
 
-/** Returns the earliest of the specified {@link Timestamp}s. */
+/** Compares a list of {@link Timestamp}s and returns the earliest in the list.
+ *
+ * Returns `null` if the list is empty. */
 export function earliest<T extends TimestampOptions>(timestamps: Iterable<T>): Timestamp | null {
     return mapNullable(minimum(map(timestamps, toReferenceSeconds)), fromReferenceSeconds);
 }
 
-/** Returns the earliest of the specified {@link Timestamp}s. */
+/** Compares two {@link Timestamp}s and returns the earlier of the two.
+ *
+ * Curried variant of {@link earliest}. */
 export function earliestFn(b: TimestampOptions): (a: TimestampOptions) => Timestamp {
     const bs = toReferenceSeconds(b);
     return a => {
