@@ -315,10 +315,20 @@ export function equal(a: TimestampOptions, b: TimestampOptions): boolean {
 
 /** Returns `true` if `a` and `b` refer to the same timestamp.
  *
+ * Alias of {@link equal}, for disambiguation from other equality functions. */
+export const timestampsEqual = equal;
+
+/** Returns `true` if `a` and `b` refer to the same timestamp.
+ *
  * Curried variant of {@link equal}. */
 export function equalFn(b: TimestampOptions): (a: TimestampOptions) => boolean {
     return a => equal(a, b);
 }
+
+/** Returns `true` if `a` and `b` refer to the same timestamp.
+ *
+ * Curried variant of {@link timestampsEqual}. */
+export const timestampsEqualFn = equalFn;
 
 /** Tests if two {@link Timestamp}s are not equal. */
 export function notEqual(a: TimestampOptions, b: TimestampOptions): boolean {
