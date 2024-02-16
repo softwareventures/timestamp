@@ -1208,8 +1208,8 @@ __metadata:
     "@softwareventures/semantic-release-config": "npm:4.0.0"
     "@softwareventures/time": "npm:^1.0.0 || ^2.0.0 || ^3.0.0"
     "@softwareventures/tsconfig": "npm:7.1.0"
-    "@types/inquirer": "npm:^9"
-    "@types/is-integer": "npm:^1"
+    "@types/inquirer": "npm:9.0.7"
+    "@types/is-integer": "npm:1.0.2"
     "@typescript-eslint/eslint-plugin": "npm:7.0.1"
     "@typescript-eslint/parser": "npm:7.0.1"
     ava: "npm:6.1.1"
@@ -1289,7 +1289,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/inquirer@npm:^9":
+"@types/inquirer@npm:9.0.7":
   version: 9.0.7
   resolution: "@types/inquirer@npm:9.0.7"
   dependencies:
@@ -1299,7 +1299,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/is-integer@npm:1.0.2, @types/is-integer@npm:^1, @types/is-integer@npm:^1.0.0, @types/is-integer@npm:^1.0.2":
+"@types/is-integer@npm:1.0.2, @types/is-integer@npm:^1.0.0, @types/is-integer@npm:^1.0.2":
   version: 1.0.2
   resolution: "@types/is-integer@npm:1.0.2"
   checksum: 10c0/412ff56482710d981218916e86e36c4d8947e6866707f92e880d4396ae8f36dacd4e694bb766ecdfe985c3530a14d5624cb28382a413f899a82c5e98ef625000
