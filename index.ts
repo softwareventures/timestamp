@@ -32,32 +32,72 @@ export interface Timestamp {
      * so on.
      *
      * Note that there is no year zero in the Gregorian Calendar. The year 1
-     * BCE was immediately followed by 1 CE.
-     *
-     * @default 1 */
+     * BCE was immediately followed by 1 CE. */
     readonly year: number;
 
-    /** The month of the year. Should be an integer in the range `1`-`12`.
-     *
-     * @default 1 */
+    /** The month of the year. Should be an integer in the range `1`-`12`. */
     readonly month: number;
 
-    /** The day of the month. Should be an integer in the range `1`-`31`.
-     *
-     * @default 1 */
+    /** The day of the month. Should be an integer in the range `1`-`31`. */
     readonly day: number;
 
     /** The hours component of the time of day. Should be an integer in the
-     * range `0`-`23`.
+     * range `0`-`23`. */
+    readonly hours: number;
+
+    /** The minutes component of the time of day. Should be an integer in the
+     * range `0`-`59`. */
+    readonly minutes: number;
+
+    /** The seconds component of the time of day. Should be in the range `0`-`60`,
+     * inclusive of `0` but exclusive of `60`. May be fractional to represent an
+     * instant in time with sub-second accuracy. */
+    readonly seconds: number;
+}
+
+/** Options for creating a `Timestamp`.
+ *
+ * An instance of {@link Timestamp} may always be used in place of
+ * `TimestampOptions`. */
+export interface TimestampOptions {
+    /** Type discriminator identifying the object as a `Timestamp`.
      *
-     * @default 0 */
+     * If specified, must be the string `"Timestamp"`. This is to prevent errors
+     * caused by a `Timestamp` being accidentally passed to functions that
+     * operate on other types. */
+    readonly type?: "Timestamp";
+
+    /** The year.
+     *
+     * Should be an integer.
+     *
+     * Positive values represent years in the Common Era (CE/AD). For example,
+     * `2021` represents 2021 CE, the year this module was first published to
+     * npm.
+     *
+     * Negative values or zero represent years before the Common Era (BCE/BC).
+     * Zero represents 1 BCE, `-1` represents 2 BCE, `-2` represents 3 BCE, and
+     * so on.
+     *
+     * Note that there is no year zero in the Gregorian Calendar. The year 1
+     * BCE was immediately followed by 1 CE. */
+    readonly year: number;
+
+    /** The month of the year. Should be an integer in the range `1`-`12`. */
+    readonly month: number;
+
+    /** The day of the month. Should be an integer in the range `1`-`31`. */
+    readonly day: number;
+
+    /** The hours component of the time of day. Should be an integer in the
+     * range `0`-`23`. */
     readonly hours: number;
 
     /** The minutes component of the time of day. Should be an integer in the
      * range `0`-`59`.
      *
      * @default 0 */
-    readonly minutes: number;
+    readonly minutes?: number;
 
     /** The seconds component of the time of day. Should be in the range `0`-`60`,
      * inclusive of `0` but exclusive of `60`. May be fractional to represent an
@@ -66,12 +106,6 @@ export interface Timestamp {
      * @default 0 */
     readonly seconds: number;
 }
-
-/** Options for creating a `Timestamp`.
- *
- * An instance of {@link Timestamp} may always be used in place of
- * `TimestampOptions`. */
-export type TimestampOptions = Partial<Timestamp>;
 
 /** The numeric representation of the month of January. */
 export const JANUARY = date.JANUARY; // eslint-disable-line @typescript-eslint/naming-convention
@@ -161,22 +195,15 @@ export function isValidTimestamp(value: unknown): value is Timestamp {
  *
  * {@link Timestamp}s returned by functions in this library are always valid. */
 export function isValid(timestamp: TimestampOptions): boolean {
-    const year = timestamp.year ?? 1;
-    const month = timestamp.month ?? 1;
-    const day = timestamp.day ?? 1;
-    const hours = timestamp.hours ?? 0;
-    const minutes = timestamp.minutes ?? 0;
-    const seconds = timestamp.seconds ?? 0;
-
     return (
         (!hasProperty(timestamp, "type") || timestamp.type === "Timestamp") &&
-        isInteger(year) &&
-        isIntegerInRange(month, JANUARY, DECEMBER) &&
-        isIntegerInRange(day, 1, daysInMonth(month, year)) &&
-        isIntegerInRange(hours, 0, 23) &&
-        isIntegerInRange(minutes, 0, 59) &&
-        seconds >= 0 &&
-        seconds < 60
+        isInteger(timestamp.year) &&
+        isIntegerInRange(timestamp.month, JANUARY, DECEMBER) &&
+        isIntegerInRange(timestamp.day, 1, daysInMonth(timestamp.month, timestamp.year)) &&
+        isIntegerInRange(timestamp.hours, 0, 23) &&
+        isIntegerInRange(timestamp.minutes ?? 0, 0, 59) &&
+        (timestamp.seconds ?? 0) >= 0 &&
+        (timestamp.seconds ?? 0) < 60
     );
 }
 
