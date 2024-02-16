@@ -421,10 +421,21 @@ export function beforeOrEqual(a: TimestampOptions, b: TimestampOptions): boolean
 
 /** Returns `true` if `a` refers to a timestamp before or the same as `b`.
  *
+ * Alias of {@link beforeOrEqual}, useful for disambiguation from similar
+ * functions that operate on other date/time types. */
+export const timestampBeforeOrEqual = beforeOrEqual;
+
+/** Returns `true` if `a` refers to a timestamp before or the same as `b`.
+ *
  * Curried variant of {@link beforeOrEqual}. */
 export function beforeOrEqualFn(b: TimestampOptions): (a: TimestampOptions) => boolean {
     return a => beforeOrEqual(a, b);
 }
+
+/** Returns `true` if `a` refers to a timestamp before or the same as `b`.
+ *
+ * Curried variant of {@link timestampBeforeOrEqual}. */
+export const timestampBeforeOrEqualFn = beforeOrEqualFn;
 
 /** Tests if the {@link Timestamp} `a` is after the {@link Timestamp} `b`. */
 export function after(a: TimestampOptions, b: TimestampOptions): boolean {
