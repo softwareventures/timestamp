@@ -391,12 +391,14 @@ export function compareFn(b: TimestampOptions): (a: TimestampOptions) => Compari
  * Curried variant of {@link compareTimestamps}. */
 export const compareTimestampsFn = compareFn;
 
-/** Tests if the {@link Timestamp} `a` is before the {@link Timestamp} `b`. */
+/** Returns `true` if `a` refers to a timestamp before `b`. */
 export function before(a: TimestampOptions, b: TimestampOptions): boolean {
     return toReferenceSeconds(a) < toReferenceSeconds(b);
 }
 
-/** Tests if the {@link Timestamp} `a` is before the {@link Timestamp} `b`. */
+/** Returns `true` if `a` refers to a date and time before `b`.
+ *
+ * Curried variant of {@link before}. */
 export function beforeFn(b: TimestampOptions): (a: TimestampOptions) => boolean {
     return a => before(a, b);
 }
