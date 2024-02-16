@@ -467,10 +467,21 @@ export function afterOrEqual(a: TimestampOptions, b: TimestampOptions): boolean 
 
 /** Returns `true` if `a` refers to a timestamp after or the same as `b`.
  *
+ * Alias of {@link afterOrEqual}, useful for disambiguation from similar
+ * functions that operate on other date/time types. */
+export const timestampAfterOrEqual = afterOrEqual;
+
+/** Returns `true` if `a` refers to a timestamp after or the same as `b`.
+ *
  * Curried variant of {@link afterOrEqual}. */
 export function afterOrEqualFn(b: TimestampOptions): (a: TimestampOptions) => boolean {
     return a => afterOrEqual(a, b);
 }
+
+/** Returns `true` if `a` refers to a timestamp after or the same as `b`.
+ *
+ * Curried variant of {@link timestampAfterOrEqual}. */
+export const timestampAfterOrEqualFn = afterOrEqualFn;
 
 /** Returns the earliest of the specified {@link Timestamp}s. */
 export function earliest<T extends TimestampOptions>(timestamps: Iterable<T>): Timestamp | null {
