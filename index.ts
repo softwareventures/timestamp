@@ -396,12 +396,23 @@ export function before(a: TimestampOptions, b: TimestampOptions): boolean {
     return toReferenceSeconds(a) < toReferenceSeconds(b);
 }
 
+/** Returns `true` if `a` refers to a timestamp before `b`.
+ *
+ * Alias of {@link before}, useful for disambiguation from similar functions
+ * that operate on other date/time types. */
+export const timestampBefore = before;
+
 /** Returns `true` if `a` refers to a date and time before `b`.
  *
  * Curried variant of {@link before}. */
 export function beforeFn(b: TimestampOptions): (a: TimestampOptions) => boolean {
     return a => before(a, b);
 }
+
+/** Returns `true` if `a` refers to a timestamp before `b`.
+ *
+ * Curried variant of {@link timestampBefore}. */
+export const timestampBeforeFn = beforeFn;
 
 /** Tests if the {@link Timestamp} `a` is before or equal to the
  * {@link Timestamp} `b`. */
