@@ -221,10 +221,11 @@ export function validate(timestamp: TimestampOptions): void {
  * field is non-finite or outside the valid range. */
 export const validateTimestamp = validate;
 
-/** Creates a {@link Timestamp} with the specified options.
+/** Constructs a normalized {@link Timestamp} object from the specified options.
  *
- * If any numeric components are outside the expected range, then
- * the resulting Timestamp will be normalized. */
+ * If the `month`, `day`, `hour`, `minute` or `seconds` fields are outside the
+ * valid range, then they will roll over into the next minute, hours, day,
+ * month or year. */
 export function timestamp(options: TimestampOptions): Timestamp {
     return fromReferenceSeconds(toReferenceSeconds(options));
 }
@@ -240,10 +241,16 @@ export function fromJsDate(date: JsDate): Timestamp {
     });
 }
 
-/** Creates a {@link Timestamp} with the specified options.
+/** Normalizes the specified {@link Timestamp} object so that it represents a
+ * valid timestamp.
  *
- * If any numeric components are outside the expected range, then
- * the resulting Timestamp will be normalized. */
+ * If the `month`, `day`, `hour`, `minute` or `seconds` fields are outside the
+ * valid range, then they will roll over into the next minute, hours, day,
+ * month or year.
+ *
+ * Alias of {@link timestamp}. Calling the function by this name instead might
+ * make code clearer in cases where the purpose is to normalize an existing
+ * `Timestamp` object. */
 export const normalize = timestamp;
 
 /** Converts the specified {@link Timestamp} to a count of seconds since the
