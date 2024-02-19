@@ -748,11 +748,11 @@ __metadata:
   linkType: hard
 
 "@octokit/types@npm:^12.0.0, @octokit/types@npm:^12.2.0, @octokit/types@npm:^12.4.0":
-  version: 12.4.0
-  resolution: "@octokit/types@npm:12.4.0"
+  version: 12.5.0
+  resolution: "@octokit/types@npm:12.5.0"
   dependencies:
     "@octokit/openapi-types": "npm:^19.1.0"
-  checksum: 10c0/b52b3fd8af307a1868846991f8376548a790814b20639dee1110271a768c0489081970df893ca2230f6285066003230d22f5877eeac90418971a475c79808241
+  checksum: 10c0/113c6b7e6e90308ec42093b36914c940baf8e8929e09d0ec48183fc896c45f38d89a540b00df7a945614abad5dd03dcacdf1d3c48895bbe716db8c3b29dc9518
   languageName: node
   linkType: hard
 
@@ -893,12 +893,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@sigstore/bundle@npm:^2.1.1":
-  version: 2.1.1
-  resolution: "@sigstore/bundle@npm:2.1.1"
+"@sigstore/bundle@npm:^2.2.0":
+  version: 2.2.0
+  resolution: "@sigstore/bundle@npm:2.2.0"
   dependencies:
-    "@sigstore/protobuf-specs": "npm:^0.2.1"
-  checksum: 10c0/d3e358569e9b0f1a2c5bfa3ab8608046fc11f42424ea717b4871044cf9ecbff374fc08673b9858ec93f993fa1a6166d416b1245a0d13d0f856ea5de99e27a594
+    "@sigstore/protobuf-specs": "npm:^0.3.0"
+  checksum: 10c0/1c54c4c6ba3707aa9aa6a45eafcdaa840927860c295b1d2a8572b7efcd609e550ed56f3e72853285a1deae3fab83fbdcac74c4dd42b2774240408d5508556548
   languageName: node
   linkType: hard
 
@@ -909,43 +909,43 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@sigstore/protobuf-specs@npm:^0.2.1":
-  version: 0.2.1
-  resolution: "@sigstore/protobuf-specs@npm:0.2.1"
-  checksum: 10c0/756b3bc64e7f21d966473208cd3920fcde6744025f7deb1d3be1d2b6261b825178b393db7458cd191b2eab947e516eacd6f91aa2f4545d8c045431fb699ac357
+"@sigstore/protobuf-specs@npm:^0.3.0":
+  version: 0.3.0
+  resolution: "@sigstore/protobuf-specs@npm:0.3.0"
+  checksum: 10c0/a814342284681da9bb31f4224076aedd8f9e0fe8bb32a391a0765a37782f2cb37abb9342df776d304681965a297981a33cec9733262b65a58707f5eb16024ebb
   languageName: node
   linkType: hard
 
-"@sigstore/sign@npm:^2.2.2":
-  version: 2.2.2
-  resolution: "@sigstore/sign@npm:2.2.2"
+"@sigstore/sign@npm:^2.2.3":
+  version: 2.2.3
+  resolution: "@sigstore/sign@npm:2.2.3"
   dependencies:
-    "@sigstore/bundle": "npm:^2.1.1"
+    "@sigstore/bundle": "npm:^2.2.0"
     "@sigstore/core": "npm:^1.0.0"
-    "@sigstore/protobuf-specs": "npm:^0.2.1"
+    "@sigstore/protobuf-specs": "npm:^0.3.0"
     make-fetch-happen: "npm:^13.0.0"
-  checksum: 10c0/b8dc2638cd9c82ff5a2cacb868014780698e386cff48f7d1b382943633f2997a65538d89ecc5339170ec7dd10cbb667134f12a9455c104ff0e4cce40926a7d83
+  checksum: 10c0/af3a8b3adb70f43b8f9caf81d51715e00602880c991fc41291b5f3a7510eba48ac33ef95f6deebaede9322a23bfb5b7df889bdc3e8c46923ba77da79b491ae91
   languageName: node
   linkType: hard
 
-"@sigstore/tuf@npm:^2.3.0":
-  version: 2.3.0
-  resolution: "@sigstore/tuf@npm:2.3.0"
+"@sigstore/tuf@npm:^2.3.0, @sigstore/tuf@npm:^2.3.1":
+  version: 2.3.1
+  resolution: "@sigstore/tuf@npm:2.3.1"
   dependencies:
-    "@sigstore/protobuf-specs": "npm:^0.2.1"
+    "@sigstore/protobuf-specs": "npm:^0.3.0"
     tuf-js: "npm:^2.2.0"
-  checksum: 10c0/a214561e143f553132428597eaa68cfdcb36c6bf757f3dea30b2e55038433b0ffc53c446036e6d104487fb55f8d6bc6e01764090d29f42497fb44d55017f360c
+  checksum: 10c0/ba584d2fa7fc142d4671b6cdc2fe0e67a293fe79f91bfb042bf537ed39e34abc799d3caa1d69bda029f54da5c0f9f58803c7fae80bc96f867fb3aebc214a43b3
   languageName: node
   linkType: hard
 
-"@sigstore/verify@npm:^1.0.0":
-  version: 1.0.0
-  resolution: "@sigstore/verify@npm:1.0.0"
+"@sigstore/verify@npm:^1.1.0":
+  version: 1.1.0
+  resolution: "@sigstore/verify@npm:1.1.0"
   dependencies:
-    "@sigstore/bundle": "npm:^2.1.1"
+    "@sigstore/bundle": "npm:^2.2.0"
     "@sigstore/core": "npm:^1.0.0"
-    "@sigstore/protobuf-specs": "npm:^0.2.1"
-  checksum: 10c0/7116bd5930ae663cb535e211b4e7bbfb01828cdd07c1ef0204ec4871ef434fc80158eb732f67ba8e739ec4f653ecdf52f47c9b2997b55ccd0ff5f8413be076fb
+    "@sigstore/protobuf-specs": "npm:^0.3.0"
+  checksum: 10c0/bdd0c4768e74fb032767bcdbc3403e72b7a53ab06339d135521d2da3ecca01d3f3b5fababcaf70846df44af35726c6e859624d5532e3dccc514d0c36d5cb88e5
   languageName: node
   linkType: hard
 
@@ -985,36 +985,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@softwareventures/date@npm:^1.4.2 || ^2.0.0 || ^3.0.0":
-  version: 3.1.2
-  resolution: "@softwareventures/date@npm:3.1.2"
-  dependencies:
-    "@softwareventures/format-date": "npm:^1.0.0"
-    "@softwareventures/ordered": "npm:^0.2.1 || ^1.0.0 || ^2.0.0"
-    "@types/is-integer": "npm:^1.0.2"
-    is-integer: "npm:^1.0.7"
-    is-integer-in-range: "npm:^1.0.0 || ^2.0.0 || ^3.0.0 || ^4.0.0"
-    tslib: "npm:^2.1.0"
-    unknown: "npm:^0.2.5"
-  checksum: 10c0/00bcc32cce6ad9998c2f9379a153d50ab72910d86ce9a9b934561ad3f2ff35008d15f40bac4eef5019f99c197b1655466e96910f041301d87a5b75906d4757da
-  languageName: node
-  linkType: hard
-
-"@softwareventures/date@npm:^1.4.2 || ^2.0.0 || ^3.0.0 || ^4.0.0":
-  version: 4.1.1
-  resolution: "@softwareventures/date@npm:4.1.1"
-  dependencies:
-    "@softwareventures/format-date": "npm:^1.0.0"
-    "@softwareventures/ordered": "npm:^0.2.1 || ^1.0.0 || ^2.0.0"
-    "@types/is-integer": "npm:^1.0.2"
-    is-integer: "npm:^1.0.7"
-    is-integer-in-range: "npm:^1.0.0 || ^2.0.0 || ^3.0.0 || ^4.0.0"
-    tslib: "npm:^2.1.0"
-    unknown: "npm:^0.2.5"
-  checksum: 10c0/1ab4e39519d69158c87d8d139b81e3ae95518e7053dbc0e467bd56dbb9a5ae1c2aef9c51941ae8964d1f7f071c9e90debe6f5333bafa0d6d87ac31ff72c435cf
-  languageName: node
-  linkType: hard
-
 "@softwareventures/date@npm:^1.4.2 || ^2.0.0 || ^3.0.0 || ^4.0.0 || ^5.0.0":
   version: 5.0.0
   resolution: "@softwareventures/date@npm:5.0.0"
@@ -1050,14 +1020,14 @@ __metadata:
   linkType: hard
 
 "@softwareventures/format-date@npm:^1.0.0":
-  version: 1.0.5
-  resolution: "@softwareventures/format-date@npm:1.0.5"
+  version: 1.1.0
+  resolution: "@softwareventures/format-date@npm:1.1.0"
   dependencies:
     "@softwareventures/array": "npm:^3.10.0 || ^4.0.0 || ^5.0.0 || ^6.0.0 || ^7.0.0"
-    "@softwareventures/date": "npm:^1.4.2 || ^2.0.0 || ^3.0.0 || ^4.0.0"
+    "@softwareventures/date": "npm:^1.4.2 || ^2.0.0 || ^3.0.0 || ^4.0.0 || ^5.0.0"
     "@softwareventures/nullable": "npm:^2.0.0 || ^3.0.0"
     tslib: "npm:^2.6.2"
-  checksum: 10c0/5f5adc02d7422699ee854117e2d9431a1b160f2b9bacf16bf16ed248be34b0ff43119862af709a68e8ecd81a85d078e44327258c3c0d761d314f21a6c683caaa
+  checksum: 10c0/6e980038601404ca80f5ace360152a867e2c6b7be6ef0bb082d857ae3705a93f483e50f53f007904d5210ddc8ed5a4aca102943ad85ba9a20b0d840ffb4d0b7e
   languageName: node
   linkType: hard
 
@@ -1073,15 +1043,15 @@ __metadata:
   linkType: hard
 
 "@softwareventures/format-timestamp@npm:^1.0.0":
-  version: 1.0.4
-  resolution: "@softwareventures/format-timestamp@npm:1.0.4"
+  version: 1.1.0
+  resolution: "@softwareventures/format-timestamp@npm:1.1.0"
   dependencies:
     "@softwareventures/array": "npm:^3.10.0 || ^4.0.0 || ^5.0.0 || ^6.0.0 || ^7.0.0"
     "@softwareventures/format-date": "npm:^1.0.0"
     "@softwareventures/format-time": "npm:^1.0.0"
-    "@softwareventures/timestamp": "npm:^1.0.0"
+    "@softwareventures/timestamp": "npm:^1.0.0 || ^2.0.0"
     tslib: "npm:^2.6.2"
-  checksum: 10c0/05bd18ba6127c5e08e632924a7523558a5be9a52f0d67b581198d4184552d6b01336a6c519d3c26fab408782ce4a04261491fcb9144ba3b43faddc355e8c7f3f
+  checksum: 10c0/bad2acbc34cbff61abe361ed9c27ec974bbb070a24e49ba40836ae84b973cc858c01d118bc00f2e287cf64edba70a2b4eefda9eaa80b17f489038ae99b42fd90
   languageName: node
   linkType: hard
 
@@ -1158,22 +1128,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@softwareventures/time@npm:^1.0.0 || ^2.0.0":
-  version: 2.2.1
-  resolution: "@softwareventures/time@npm:2.2.1"
-  dependencies:
-    "@softwareventures/format-time": "npm:^1.0.0"
-    "@softwareventures/nullable": "npm:^3.2.0"
-    "@softwareventures/ordered": "npm:^1.0.0 || ^2.0.0"
-    "@types/is-integer": "npm:1.0.2"
-    is-integer: "npm:^1.0.7"
-    is-integer-in-range: "npm:^3.0.1 || ^4.0.0"
-    tslib: "npm:^2.1.0"
-    unknown: "npm:^0.2.5"
-  checksum: 10c0/9cf43bcc5dfd50ddb188aa1f833aa96f9d9648951c174aa129bf8b7abcd37ca43b7070d9d006fc40e10d342a930207f6caa969303d5cf5871d87dbddc9442a24
-  languageName: node
-  linkType: hard
-
 "@softwareventures/time@npm:^1.0.0 || ^2.0.0 || ^3.0.0, @softwareventures/time@npm:^2.0.0 || ^3.0.0":
   version: 3.1.1
   resolution: "@softwareventures/time@npm:3.1.1"
@@ -1190,19 +1144,20 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@softwareventures/timestamp@npm:^1.0.0":
-  version: 1.1.2
-  resolution: "@softwareventures/timestamp@npm:1.1.2"
+"@softwareventures/timestamp@npm:^1.0.0 || ^2.0.0":
+  version: 2.1.0
+  resolution: "@softwareventures/timestamp@npm:2.1.0"
   dependencies:
-    "@softwareventures/date": "npm:^1.4.2 || ^2.0.0 || ^3.0.0"
+    "@softwareventures/date": "npm:^1.4.2 || ^2.0.0 || ^3.0.0 || ^4.0.0 || ^5.0.0"
     "@softwareventures/format-timestamp": "npm:^1.0.0"
-    "@softwareventures/iterable": "npm:^1.1.2 || ^2.0.0 || ^3.0.0"
     "@softwareventures/nullable": "npm:^1.3.1 || ^2.0.0 || ^3.0.0"
     "@softwareventures/ordered": "npm:^0.2.2 || ^1.0.0 || ^2.0.0"
-    "@softwareventures/time": "npm:^1.0.0 || ^2.0.0"
+    "@softwareventures/time": "npm:^1.0.0 || ^2.0.0 || ^3.0.0"
+    is-integer: "npm:^1.0.7"
+    is-integer-in-range: "npm:^4.0.0"
     tslib: "npm:2.6.2"
     unknown: "npm:^0.2.5"
-  checksum: 10c0/859c523022d058561b840b8ed743794cda1120c0e527c34f70a212ff11f2f8d1785f439791f4d42aa2a72b1b6c4f026c82daa45d9c65273aff372aacdffc8230
+  checksum: 10c0/8c6e914b0f4345b15c2b7aa1a35d7b4bf7abf9fdcf98c8a34afc06756efd0417f59debbe897a6c57cb42bca1aa306c1fdae445a9038b2806091edc16cda5b56f
   languageName: node
   linkType: hard
 
@@ -1950,7 +1905,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"available-typed-arrays@npm:^1.0.5, available-typed-arrays@npm:^1.0.6":
+"available-typed-arrays@npm:^1.0.6":
   version: 1.0.6
   resolution: "available-typed-arrays@npm:1.0.6"
   checksum: 10c0/e427360e68ccb19fa0ea48421f393ef3f3d2c9c561f6a8a0704ff472d58024be3e4101f00565445ba453de723a76f4a650defbacaea663c3fb3be8b8f842e955
@@ -4123,12 +4078,12 @@ __metadata:
   linkType: hard
 
 "http-proxy-agent@npm:^7.0.0":
-  version: 7.0.1
-  resolution: "http-proxy-agent@npm:7.0.1"
+  version: 7.0.2
+  resolution: "http-proxy-agent@npm:7.0.2"
   dependencies:
     agent-base: "npm:^7.1.0"
     debug: "npm:^4.3.4"
-  checksum: 10c0/09bc7ea134a133caeb57c9487e6ee59c61aebdc8f531a86c4638cffc0d04cf7415b9d74d32e6e7781e1e931e882d1163c953430aefd6fbd1465b5e033432a040
+  checksum: 10c0/4207b06a4580fb85dd6dff521f0abf6db517489e70863dca1a0291daa7f2d3d2d6015a57bd702af068ea5cf9f1f6ff72314f5f5b4228d299c0904135d2aef921
   languageName: node
   linkType: hard
 
@@ -4143,12 +4098,12 @@ __metadata:
   linkType: hard
 
 "https-proxy-agent@npm:^7.0.0, https-proxy-agent@npm:^7.0.1":
-  version: 7.0.3
-  resolution: "https-proxy-agent@npm:7.0.3"
+  version: 7.0.4
+  resolution: "https-proxy-agent@npm:7.0.4"
   dependencies:
     agent-base: "npm:^7.0.2"
     debug: "npm:4"
-  checksum: 10c0/0a5d4beb8f3e71755e3dc62e421aceb3df8bf0d20892dfbdc54de7791f9d34be222c6acb8c83930b138a4bab9387a9f4e06ea0b171cda8e167c3aa72d437f8d8
+  checksum: 10c0/bc4f7c38da32a5fc622450b6cb49a24ff596f9bd48dcedb52d2da3fa1c1a80e100fb506bd59b326c012f21c863c69b275c23de1a01d0b84db396822fdf25e52b
   languageName: node
   linkType: hard
 
@@ -7194,16 +7149,16 @@ __metadata:
   linkType: hard
 
 "sigstore@npm:^2.2.0":
-  version: 2.2.1
-  resolution: "sigstore@npm:2.2.1"
+  version: 2.2.2
+  resolution: "sigstore@npm:2.2.2"
   dependencies:
-    "@sigstore/bundle": "npm:^2.1.1"
+    "@sigstore/bundle": "npm:^2.2.0"
     "@sigstore/core": "npm:^1.0.0"
-    "@sigstore/protobuf-specs": "npm:^0.2.1"
-    "@sigstore/sign": "npm:^2.2.2"
-    "@sigstore/tuf": "npm:^2.3.0"
-    "@sigstore/verify": "npm:^1.0.0"
-  checksum: 10c0/e0ecb50d40426885cecc3b0658f7c3a6f9524683f54ae9ca9dd2c0ab3d707800275679f8d29e73e043c596887e3a102a7ccedcc83c8242a56504b7f45919176f
+    "@sigstore/protobuf-specs": "npm:^0.3.0"
+    "@sigstore/sign": "npm:^2.2.3"
+    "@sigstore/tuf": "npm:^2.3.1"
+    "@sigstore/verify": "npm:^1.1.0"
+  checksum: 10c0/cf3d71d3ef886d84e2a885f25cc42392cfce98de7fbf70a4d6595fe273e813970cb5901e07f69f0902cc0348e5de33c1a8c535d7aae1d21d1a2bdf696108b190
   languageName: node
   linkType: hard
 
@@ -7927,15 +7882,16 @@ __metadata:
   linkType: hard
 
 "typed-array-byte-offset@npm:^1.0.0":
-  version: 1.0.0
-  resolution: "typed-array-byte-offset@npm:1.0.0"
+  version: 1.0.1
+  resolution: "typed-array-byte-offset@npm:1.0.1"
   dependencies:
-    available-typed-arrays: "npm:^1.0.5"
-    call-bind: "npm:^1.0.2"
+    available-typed-arrays: "npm:^1.0.6"
+    call-bind: "npm:^1.0.7"
     for-each: "npm:^0.3.3"
+    gopd: "npm:^1.0.1"
     has-proto: "npm:^1.0.1"
-    is-typed-array: "npm:^1.1.10"
-  checksum: 10c0/4036ce007ae9752931bed3dd61e0d6de2a3e5f6a5a85a05f3adb35388d2c0728f9b1a1e638d75579f168e49c289bfb5417f00e96d4ab081f38b647fc854ff7a5
+    is-typed-array: "npm:^1.1.13"
+  checksum: 10c0/d65bd43ca55804d34a7752372abc27ca3b75455e14ebdac4e7648e3aa836455145636421efc9d7ffa020bca895b2f76588efdf3a7a2c21e25dc1cb3fdce60a6a
   languageName: node
   linkType: hard
 
