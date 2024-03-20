@@ -64,7 +64,7 @@
     "prettier": "2.8.8",
     "semantic-release": "22.0.12",
     "ts-node": "10.9.2",
-    "typescript": "5.4.2"
+    "typescript": "5.4.3"
   },
   "eslintConfig": {
     "root": true,
