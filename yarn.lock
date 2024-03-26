@@ -1133,16 +1133,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@softwareventures/precise-commits@npm:3.0.33":
-  version: 3.0.33
-  resolution: "@softwareventures/precise-commits@npm:3.0.33"
+"@softwareventures/precise-commits@npm:3.0.35":
+  version: 3.0.35
+  resolution: "@softwareventures/precise-commits@npm:3.0.35"
   dependencies:
     "@softwareventures/array": "npm:6.1.0"
     "@softwareventures/nullable": "npm:3.2.0"
     execa: "npm:5.1.1"
     find-up: "npm:5.0.0"
     glob: "npm:8.1.0"
-    ignore: "npm:5.3.0"
+    ignore: "npm:5.3.1"
     mri: "npm:1.2.0"
     ora: "npm:5.4.1"
     rxjs: "npm:7.8.1"
@@ -1152,7 +1152,7 @@ __metadata:
     prettier: ^1.8.0 || ^2.0.0
   bin:
     precise-commits: lib/cli.js
-  checksum: 10c0/c6c0dc171ef145d02bb37655a4b347947ac31f5d2a2a3bbbf3d30d00cf5ceedb4e972cdd45c4309367f8ae3b9b6e587d9896da7c6e5f35abf1bd725a2bb29304
+  checksum: 10c0/f4e22bf8d05b24c0479d12c899b258a4a82c8e0e9b8b2d018ecb3e22c611072146712f5de6cd5ade54887bb6467406a5aeb16c5cb1305aeca67448e03d5f3cbb
   languageName: node
   linkType: hard
 
@@ -1222,7 +1222,7 @@ __metadata:
     "@softwareventures/format-timestamp": "npm:^1.0.0"
     "@softwareventures/nullable": "npm:^1.3.1 || ^2.0.0 || ^3.0.0"
     "@softwareventures/ordered": "npm:^0.2.2 || ^1.0.0 || ^2.0.0"
-    "@softwareventures/precise-commits": "npm:3.0.33"
+    "@softwareventures/precise-commits": "npm:3.0.35"
     "@softwareventures/prettier-config": "npm:4.0.0"
     "@softwareventures/semantic-release-config": "npm:4.0.0"
     "@softwareventures/time": "npm:^1.0.0 || ^2.0.0 || ^3.0.0"
@@ -4314,14 +4314,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"ignore@npm:5.3.0":
-  version: 5.3.0
-  resolution: "ignore@npm:5.3.0"
-  checksum: 10c0/dc06bea5c23aae65d0725a957a0638b57e235ae4568dda51ca142053ed2c352de7e3bc93a69b2b32ac31966a1952e9a93c5ef2e2ab7c6b06aef9808f6b55b571
-  languageName: node
-  linkType: hard
-
-"ignore@npm:^5.2.0, ignore@npm:^5.2.4":
+"ignore@npm:5.3.1, ignore@npm:^5.2.0, ignore@npm:^5.2.4":
   version: 5.3.1
   resolution: "ignore@npm:5.3.1"
   checksum: 10c0/703f7f45ffb2a27fb2c5a8db0c32e7dee66b33a225d28e8db4e1be6474795f606686a6e3bcc50e1aa12f2042db4c9d4a7d60af3250511de74620fbed052ea4cd
