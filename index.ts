@@ -269,6 +269,10 @@ export function fromJsDate(date: JsDate): Timestamp {
     });
 }
 
+export function timestampFromJsDate(date: JsDate): Timestamp {
+    return fromJsDate(date);
+}
+
 /** Normalizes the specified {@link Timestamp} object so that it represents a
  * valid timestamp.
  *
