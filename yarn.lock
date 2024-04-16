@@ -1207,7 +1207,7 @@ __metadata:
     "@softwareventures/semantic-release-config": "npm:4.1.0"
     "@softwareventures/time": "npm:^1.0.0 || ^2.0.0 || ^3.0.0"
     "@softwareventures/tsconfig": "npm:7.1.1"
-    "@types/inquirer": "npm:^9"
+    "@types/inquirer": "npm:9.0.7"
     "@types/is-integer": "npm:1.0.2"
     "@typescript-eslint/eslint-plugin": "npm:7.7.0"
     "@typescript-eslint/parser": "npm:7.7.0"
@@ -1297,7 +1297,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/inquirer@npm:^9":
+"@types/inquirer@npm:9.0.7":
   version: 9.0.7
   resolution: "@types/inquirer@npm:9.0.7"
   dependencies:
