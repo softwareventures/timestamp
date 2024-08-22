@@ -34,7 +34,7 @@
     "@softwareventures/time": "^1.0.0 || ^2.0.0 || ^3.0.0",
     "is-integer": "^1.0.7",
     "is-integer-in-range": "^4.0.0",
-    "tslib": "2.6.2",
+    "tslib": "2.6.3",
     "unknown": "^0.2.5"
   },
   "devDependencies": {
