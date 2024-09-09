@@ -48,7 +48,7 @@
     "@softwareventures/tsconfig": "7.1.1",
     "@types/inquirer": "9.0.7",
     "@types/is-integer": "1.0.2",
-    "@types/node": "20.16.1",
+    "@types/node": "20.16.5",
     "@typescript-eslint/eslint-plugin": "7.18.0",
     "@typescript-eslint/parser": "7.18.0",
     "ava": "6.1.3",
