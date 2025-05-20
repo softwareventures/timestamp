@@ -1192,7 +1192,7 @@ __metadata:
     "@softwareventures/tsconfig": "npm:7.3.0"
     "@types/inquirer": "npm:9.0.8"
     "@types/is-integer": "npm:1.0.2"
-    "@types/node": "npm:20.17.9"
+    "@types/node": "npm:20.17.48"
     "@typescript-eslint/eslint-plugin": "npm:7.18.0"
     "@typescript-eslint/parser": "npm:7.18.0"
     ava: "npm:6.2.0"
@@ -1313,12 +1313,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:*, @types/node@npm:20.17.9":
-  version: 20.17.9
-  resolution: "@types/node@npm:20.17.9"
+"@types/node@npm:*, @types/node@npm:20.17.48":
+  version: 20.17.48
+  resolution: "@types/node@npm:20.17.48"
   dependencies:
     undici-types: "npm:~6.19.2"
-  checksum: 10c0/1c37c3618407d56b76301578edabcb4c6a7ef093d0811c50fc4df8df68fc546797a294cafac0e50789f4e0e485cd1d6871964d8e6222fd420658bdae89c1fb4a
+  checksum: 10c0/fc7031f9cdee25b3ff9a0e7cbb97d58b9e19107ce28ffa8c22f1bbb2d84e8328e08343d261784160c9b7f01174c39fe1c31207451815824745c500f2934a86d3
   languageName: node
   linkType: hard
 
