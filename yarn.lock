@@ -1190,7 +1190,7 @@ __metadata:
     "@softwareventures/semantic-release-config": "npm:5.0.0"
     "@softwareventures/time": "npm:^1.0.0 || ^2.0.0 || ^3.0.0"
     "@softwareventures/tsconfig": "npm:7.3.0"
-    "@types/inquirer": "npm:9.0.7"
+    "@types/inquirer": "npm:9.0.8"
     "@types/is-integer": "npm:1.0.2"
     "@types/node": "npm:20.17.9"
     "@typescript-eslint/eslint-plugin": "npm:7.18.0"
@@ -1289,13 +1289,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/inquirer@npm:9.0.7":
-  version: 9.0.7
-  resolution: "@types/inquirer@npm:9.0.7"
+"@types/inquirer@npm:9.0.8":
+  version: 9.0.8
+  resolution: "@types/inquirer@npm:9.0.8"
   dependencies:
     "@types/through": "npm:*"
     rxjs: "npm:^7.2.0"
-  checksum: 10c0/b7138af41226c0457b99ff9b179da4a82078bc1674762e812d3cc3e3276936d7326b9fa6b98212b8eb055b2b6aaebe3c20359eebe176a6ca71061f4e08ce3a0f
+  checksum: 10c0/6b49b12ab1122b3e18d4d0f3be99dd21d67f4d03e0d61c211f1affbc2885b0094569d3e4fd977888fd42b3321842453f52ee6dcae9cc7bb706e77513538c4e09
   languageName: node
   linkType: hard
 
