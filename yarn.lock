@@ -1146,15 +1146,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@softwareventures/semantic-release-config@npm:4.1.0":
-  version: 4.1.0
-  resolution: "@softwareventures/semantic-release-config@npm:4.1.0"
+"@softwareventures/semantic-release-config@npm:5.1.1":
+  version: 5.1.1
+  resolution: "@softwareventures/semantic-release-config@npm:5.1.1"
   dependencies:
-    tslib: "npm:2.6.2"
+    tslib: "npm:2.8.1"
   peerDependencies:
     conventional-changelog-conventionalcommits: ^4.6.3 || ^5.0.0 || ^6.0.0 || ^7.0.0
+    pinst: ">= 2.1.6"
     semantic-release: ^17.0.7 || ^18.0.0 || ^19.0.0 || ^20.0.0 || ^21.0.0 || ^22.0.0 || ^23.0.0
-  checksum: 10c0/efd21e6598d1f7f4f336463f8ce1702ba529d1f186585d2ac9944c1c461d13b173d406464b12656e2e74b8054850d960f7f84c3a3e86b2aa44242e9bb3eb1fae
+    semantic-release-pinst: ^1.0.0
+  checksum: 10c0/1b14c3db31af3a62ceb9f184cb99903a4d012426c76f87f58e270887f8eee073228a4b410ee74ce58e9fdbac4dd00d172d82939984f0f51d7fd0849ac82ab5ff
   languageName: node
   linkType: hard
 
@@ -1206,7 +1208,7 @@ __metadata:
     "@softwareventures/ordered": "npm:^0.2.2 || ^1.0.0 || ^2.0.0"
     "@softwareventures/precise-commits": "npm:4.0.14"
     "@softwareventures/prettier-config": "npm:4.0.0"
-    "@softwareventures/semantic-release-config": "npm:4.1.0"
+    "@softwareventures/semantic-release-config": "npm:5.1.1"
     "@softwareventures/time": "npm:^1.0.0 || ^2.0.0 || ^3.0.0"
     "@softwareventures/tsconfig": "npm:7.1.1"
     "@types/inquirer": "npm:9.0.7"
@@ -7698,10 +7700,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"tslib@npm:2.6.2, tslib@npm:^1.9.3 || ^2.0.0 || ^2.1.0, tslib@npm:^2.0.0, tslib@npm:^2.1.0, tslib@npm:^2.3.1, tslib@npm:^2.5.0, tslib@npm:^2.6.2":
+"tslib@npm:2.6.2":
   version: 2.6.2
   resolution: "tslib@npm:2.6.2"
   checksum: 10c0/e03a8a4271152c8b26604ed45535954c0a45296e32445b4b87f8a5abdb2421f40b59b4ca437c4346af0f28179780d604094eb64546bee2019d903d01c6c19bdb
+  languageName: node
+  linkType: hard
+
+"tslib@npm:2.8.1, tslib@npm:^1.9.3 || ^2.0.0 || ^2.1.0, tslib@npm:^2.0.0, tslib@npm:^2.1.0, tslib@npm:^2.3.1, tslib@npm:^2.5.0, tslib@npm:^2.6.2":
+  version: 2.8.1
+  resolution: "tslib@npm:2.8.1"
+  checksum: 10c0/9c4759110a19c53f992d9aae23aac5ced636e99887b51b9e61def52611732872ff7668757d4e4c61f19691e36f4da981cd9485e869b4a7408d689f6bf1f14e62
   languageName: node
   linkType: hard
 
