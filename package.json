@@ -46,7 +46,7 @@
     "@softwareventures/eslint-config": "7.6.0",
     "@softwareventures/precise-commits": "4.0.14",
     "@softwareventures/prettier-config": "4.0.0",
-    "@softwareventures/semantic-release-config": "4.1.0",
+    "@softwareventures/semantic-release-config": "5.1.1",
     "@softwareventures/tsconfig": "7.1.1",
     "@types/inquirer": "9.0.7",
     "@types/is-integer": "1.0.2",
